@@ -1,0 +1,1409 @@
+======== 2019-10-23 17:50:09 ========
+<html>
+	<head>
+		<title>PHP Exception - Wrong parameters for Exception([string $message [, long $code [, Throwable $previous = NULL]]])</title>
+		<style>
+			body { font-family: 'Arial', 'Helvetica', 'sans-serif'; font-size: 11px; }
+			a:link, a:visited { text-decoration: none; }
+			a:hover { text-decoration: underline; }
+			pre { font-family: 'Lucida Console', 'Courier New', 'Courier', 'monospaced'; font-size: 11px; line-height: 13px; }
+			.page { padding: 10px; }
+			.headingLeft { background-color: #440066; color: #ffffff; padding: 10px 0px 10px 10px; font-family: 'Verdana', 'Arial', 'Helvetica', 'sans-serif'; font-size: 18px; font-weight: bold; width: 70%; vertical-align: middle; }
+			.headingLeftSmall { font-size: 10px; }
+			.headingRight { background-color: #440066; color: #ffffff; padding: 0px 10px 10px 10px; font-family: 'Verdana', 'Arial', 'Helvetica', 'sans-serif'; font-size: 10px; width: 30%; vertical-align: middle; text-align: right; }
+			.title { font-family: 'Verdana', 'Arial', 'Helvetica', 'sans-serif'; font-size: 19px; font-style: italic; color: #330055; }
+			.code { background-color: #f4eeff; padding: 1px 10px 1px 10px; }
+		</style>
+		<script type="text/javascript">
+			function RenderPage(strHtml) { document.rendered.strHtml.value = strHtml; document.rendered.submit(); }
+			function ToggleHidden(strDiv) { var obj = document.getElementById(strDiv); var stlSection = obj.style; var isCollapsed = obj.style.display.length; if (isCollapsed) stlSection.display = ''; else stlSection.display = 'none'; }
+		</script>
+	</head>
+	<body bgcolor="white" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0"> 
+
+	<table border="0" cellspacing="0" width="100%">
+		<tr>
+			<td nowrap="nowrap" class="headingLeft"><span class="headingLeftSmall">Exception in PHP Script<br /></span>/index.php</td>
+			<td nowrap="nowrap" class="headingRight">
+				<b>PHP Version:</b> 7.0.33-0+deb9u1;&nbsp;&nbsp;<b>Zend Engine Version:</b> 3.0.0;&nbsp;&nbsp;<b>Qcodo Version:</b> 0.4.22<br />
+				<b>Application:</b> Apache/2.4.25 (Debian);&nbsp;&nbsp;<b>Server Name:</b> nss-computerwissen.de<br />
+				<b>HTTP User Agent:</b> <br />
+<b>Notice</b>:  Undefined index: HTTP_USER_AGENT in <b>/var/www/vhosts/nss-computerwissen.de/module/qcodo/includes/qcodo/_core/assets/error_dump.inc.php</b> on line <b>34</b><br />
+</td>
+		</tr>
+	</table>
+	
+	<div class="page">
+		<span class="title">Wrong&nbsp;parameters&nbsp;for&nbsp;Exception([string&nbsp;$message&nbsp;[,&nbsp;long&nbsp;$code&nbsp;[,&nbsp;Throwable&nbsp;$previous&nbsp;=&nbsp;NULL]]])</span><br />
+		<form method="post" action="/assets/php/_core/error_already_rendered_page.php" target="blank" name="rendered"><input type="hidden" name="strHtml" value=""></form>
+
+			<b>Exception Type:</b>&nbsp;&nbsp;
+			Error			<br /><br />
+
+			<b>Source File:</b>&nbsp;&nbsp;
+			/var/www/vhosts/nss-computerwissen.de/module/qcodo/includes/data_classes/Reward.class.php			&nbsp;&nbsp;&nbsp;&nbsp;<b>Line:</b>&nbsp;&nbsp;
+			21			<br /><br />
+
+			<div class="code">
+<pre>Line 16:    			$Email = Email::CreateFromView($strEmailAddress,View::Create(sprintf(&quot;temp/%s&quot;,$strFilename),$aryUrls));
+Line 17:    			unlink(BASE_DIR.sprintf(&quot;/view/temp/%s.php&quot;,$strFilename));
+Line 18:    			$Email-&gt;SenderName = $this-&gt;SenderName;
+Line 19:    			$Email-&gt;SenderAddress = $this-&gt;SenderAddress;
+Line 20:    			$Email-&gt;Subject = $this-&gt;Subject;
+<span style="color: #f00;">Line 21:    			if(!$Email-&gt;DeliverViaSmtp()) throw new Exception(&quot;Could not send a reward mail to %s&quot;,$strEmailAddress);
+</span>Line 22:    			return true;
+Line 23:    		} catch(Exception $Exception){
+Line 24:    			Errors::Register(&quot;Exception&quot;,$Exception-&gt;getMessage(),E_CORE_ERROR,$Exception-&gt;getCode(),$Exception-&gt;getFile(),$Exception-&gt;getLine());
+Line 25:    			return false;
+Line 26:    		}
+</pre>			</div><br />
+			
+
+			<b>Call Stack:</b>
+			<br><br>
+			<div class="code">
+				<pre>#0 /var/www/vhosts/nss-computerwissen.de/module/qcodo/includes/data_classes/Reward.class.php(21): Exception-&gt;__construct('Could not send ...', 'rica841@gmx.de')
+#1 /var/www/vhosts/nss-computerwissen.de/module/qcodo/includes/data_classes/Process.class.php(418): Reward-&gt;Deliver('rica841@gmx.de', 1182024, 36)
+#2 /var/www/vhosts/nss-computerwissen.de/core/Api.class.php(25): Process::Start('rica841@gmx.de', Array, '114', '77.78.160.212', 'https://club.co...', 'SEO_CW_CWC_WEB...', NULL, NULL, false, false, '', 'Mozilla/5.0 (X1...', NULL, Object(stdClass))
+#3 /var/www/vhosts/nss-computerwissen.de/controller/api.php(67): Api::Subscribe('rica841@gmx.de', Array, '114', '77.78.160.212', 'https://club.co...', 'SEO_CW_CWC_WEB...', NULL, NULL, false, false, '', 'Mozilla/5.0 (X1...', NULL, Object(stdClass))
+#4 /var/www/vhosts/nss-computerwissen.de/web/index.php(28): require('/var/www/vhosts...')
+#5 {main}</pre>
+			</div><br />
+
+			<b>Global Variables Dump:</b>&nbsp;&nbsp;
+			<a href="javascript:ToggleHidden('VariableDump')">Show/Hide</a>
+			<br /><br />
+			<div id="VariableDump" class="code" style="Display: none;">
+<pre>  <a href="javascript:RenderPage(Request)" title="object(stdClass)#18 (2) {
+  [&quot;Method&quot;]=&gt;
+  string(9) &quot;Subscribe&quot;
+  [&quot;Parameters&quot;]=&gt;
+  array(14) {
+    [0]=&gt;
+    string(14) &quot;rica841@gmx.de&quot;
+    [1]=&gt;
+    array(2) {
+      [0]=&gt;
+      string(3) &quot;CWC&quot;
+      [1]=&gt;
+      string(2) &quot;OS&quot;
+    }
+    [2]=&gt;
+    string(3) &quot;114&quot;
+    [3]=&gt;
+    string(13) &quot;77.78.160.212&quot;
+    [4]=&gt;
+    string(55) &quot;https://club.computerwissen.de/anmelden?task=user.login&quot;
+    [5]=&gt;
+    string(38) &quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;
+    [6]=&gt;
+    NULL
+    [7]=&gt;
+    NULL
+    [8]=&gt;
+    bool(false)
+    [9]=&gt;
+    bool(false)
+    [10]=&gt;
+    string(0) &quot;&quot;
+    [11]=&gt;
+    string(133) &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/77.0.3865.90 Chrome/77.0.3865.90 Safari/537.36&quot;
+    [12]=&gt;
+    NULL
+    [13]=&gt;
+    object(stdClass)#19 (7) {
+      [&quot;attributeKey[0]&quot;]=&gt;
+      string(10) &quot;FIRST_NAME&quot;
+      [&quot;attributeValue[0]&quot;]=&gt;
+      string(3) &quot;Uwe&quot;
+      [&quot;attributeKey[1]&quot;]=&gt;
+      string(9) &quot;LAST_NAME&quot;
+      [&quot;attributeValue[1]&quot;]=&gt;
+      string(7) &quot;Richter&quot;
+      [&quot;attributeKey[2]&quot;]=&gt;
+      string(6) &quot;ANREDE&quot;
+      [&quot;attributeValue[2]&quot;]=&gt;
+      string(1) &quot;H&quot;
+      [&quot;immediateConfirmation&quot;]=&gt;
+      string(32) &quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;
+    }
+  }
+}
+">Request</a>
+  <a href="javascript:RenderPage(_COOKIE)" title="array(0) {
+}
+">_COOKIE</a>
+  <a href="javascript:RenderPage(_FILES)" title="array(0) {
+}
+">_FILES</a>
+  <a href="javascript:RenderPage(_GET)" title="array(0) {
+}
+">_GET</a>
+  <a href="javascript:RenderPage(_POST)" title="array(1) {
+  [&quot;{&quot;Method&quot;:&quot;Subscribe&quot;,&quot;Parameters&quot;:&quot;]=&gt;
+  array(1) {
+    [&quot;&quot;rica841@gmx.de&quot;,[&quot;CWC&quot;,&quot;OS&quot;&quot;]=&gt;
+    string(454) &quot;user.login&quot;,&quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;,null,null,false,false,&quot;&quot;,&quot;Mozilla\/5.0 (X11; Linux x86_64) AppleWebKit\/537.36 (KHTML, like Gecko) Ubuntu Chromium\/77.0.3865.90 Chrome\/77.0.3865.90 Safari\/537.36&quot;,null,{&quot;attributeKey[0]&quot;:&quot;FIRST_NAME&quot;,&quot;attributeValue[0]&quot;:&quot;Uwe&quot;,&quot;attributeKey[1]&quot;:&quot;LAST_NAME&quot;,&quot;attributeValue[1]&quot;:&quot;Richter&quot;,&quot;attributeKey[2]&quot;:&quot;ANREDE&quot;,&quot;attributeValue[2]&quot;:&quot;H&quot;,&quot;immediateConfirmation&quot;:&quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;}]}&quot;
+  }
+}
+">_POST</a>
+  <a href="javascript:RenderPage(_SERVER)" title="array(33) {
+  [&quot;REDIRECT_HTTPS&quot;]=&gt;
+  string(2) &quot;on&quot;
+  [&quot;REDIRECT_SSL_TLS_SNI&quot;]=&gt;
+  string(21) &quot;nss-computerwissen.de&quot;
+  [&quot;REDIRECT_STATUS&quot;]=&gt;
+  string(3) &quot;200&quot;
+  [&quot;HTTPS&quot;]=&gt;
+  string(2) &quot;on&quot;
+  [&quot;SSL_TLS_SNI&quot;]=&gt;
+  string(21) &quot;nss-computerwissen.de&quot;
+  [&quot;HTTP_HOST&quot;]=&gt;
+  string(21) &quot;nss-computerwissen.de&quot;
+  [&quot;HTTP_ACCEPT&quot;]=&gt;
+  string(3) &quot;*/*&quot;
+  [&quot;CONTENT_LENGTH&quot;]=&gt;
+  string(3) &quot;591&quot;
+  [&quot;CONTENT_TYPE&quot;]=&gt;
+  string(33) &quot;application/x-www-form-urlencoded&quot;
+  [&quot;PATH&quot;]=&gt;
+  string(60) &quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;
+  [&quot;SERVER_SIGNATURE&quot;]=&gt;
+  string(83) &quot;&lt;address&gt;Apache/2.4.25 (Debian) Server at nss-computerwissen.de Port 443&lt;/address&gt;
+&quot;
+  [&quot;SERVER_SOFTWARE&quot;]=&gt;
+  string(22) &quot;Apache/2.4.25 (Debian)&quot;
+  [&quot;SERVER_NAME&quot;]=&gt;
+  string(21) &quot;nss-computerwissen.de&quot;
+  [&quot;SERVER_ADDR&quot;]=&gt;
+  string(14) &quot;141.101.36.215&quot;
+  [&quot;SERVER_PORT&quot;]=&gt;
+  string(3) &quot;443&quot;
+  [&quot;REMOTE_ADDR&quot;]=&gt;
+  string(14) &quot;134.119.43.130&quot;
+  [&quot;DOCUMENT_ROOT&quot;]=&gt;
+  string(41) &quot;/var/www/vhosts/nss-computerwissen.de/web&quot;
+  [&quot;REQUEST_SCHEME&quot;]=&gt;
+  string(5) &quot;https&quot;
+  [&quot;CONTEXT_PREFIX&quot;]=&gt;
+  string(0) &quot;&quot;
+  [&quot;CONTEXT_DOCUMENT_ROOT&quot;]=&gt;
+  string(41) &quot;/var/www/vhosts/nss-computerwissen.de/web&quot;
+  [&quot;SERVER_ADMIN&quot;]=&gt;
+  string(27) &quot;dennis.grote@muahsystems.de&quot;
+  [&quot;SCRIPT_FILENAME&quot;]=&gt;
+  string(51) &quot;/var/www/vhosts/nss-computerwissen.de/web/index.php&quot;
+  [&quot;REMOTE_PORT&quot;]=&gt;
+  string(5) &quot;54444&quot;
+  [&quot;REDIRECT_URL&quot;]=&gt;
+  string(4) &quot;/api&quot;
+  [&quot;GATEWAY_INTERFACE&quot;]=&gt;
+  string(7) &quot;CGI/1.1&quot;
+  [&quot;SERVER_PROTOCOL&quot;]=&gt;
+  string(8) &quot;HTTP/1.1&quot;
+  [&quot;REQUEST_METHOD&quot;]=&gt;
+  string(4) &quot;POST&quot;
+  [&quot;QUERY_STRING&quot;]=&gt;
+  string(0) &quot;&quot;
+  [&quot;REQUEST_URI&quot;]=&gt;
+  string(4) &quot;/api&quot;
+  [&quot;SCRIPT_NAME&quot;]=&gt;
+  string(10) &quot;/index.php&quot;
+  [&quot;PHP_SELF&quot;]=&gt;
+  string(10) &quot;/index.php&quot;
+  [&quot;REQUEST_TIME_FLOAT&quot;]=&gt;
+  float(1571845787,376)
+  [&quot;REQUEST_TIME&quot;]=&gt;
+  int(1571845787)
+}
+">_SERVER</a>
+  <a href="javascript:RenderPage(_SESSION)" title="array (
+)">_SESSION</a>
+  <a href="javascript:RenderPage(allow_origin)" title="string(1) &quot;*&quot;
+">allow_origin</a>
+  <a href="javascript:RenderPage(request_headers)" title="array(33) {
+  [&quot;redirect_https&quot;]=&gt;
+  string(2) &quot;on&quot;
+  [&quot;redirect_ssl_tls_sni&quot;]=&gt;
+  string(21) &quot;nss-computerwissen.de&quot;
+  [&quot;redirect_status&quot;]=&gt;
+  string(3) &quot;200&quot;
+  [&quot;https&quot;]=&gt;
+  string(2) &quot;on&quot;
+  [&quot;ssl_tls_sni&quot;]=&gt;
+  string(21) &quot;nss-computerwissen.de&quot;
+  [&quot;http_host&quot;]=&gt;
+  string(21) &quot;nss-computerwissen.de&quot;
+  [&quot;http_accept&quot;]=&gt;
+  string(3) &quot;*/*&quot;
+  [&quot;content_length&quot;]=&gt;
+  string(3) &quot;591&quot;
+  [&quot;content_type&quot;]=&gt;
+  string(33) &quot;application/x-www-form-urlencoded&quot;
+  [&quot;path&quot;]=&gt;
+  string(60) &quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;
+  [&quot;server_signature&quot;]=&gt;
+  string(83) &quot;&lt;address&gt;Apache/2.4.25 (Debian) Server at nss-computerwissen.de Port 443&lt;/address&gt;
+&quot;
+  [&quot;server_software&quot;]=&gt;
+  string(22) &quot;Apache/2.4.25 (Debian)&quot;
+  [&quot;server_name&quot;]=&gt;
+  string(21) &quot;nss-computerwissen.de&quot;
+  [&quot;server_addr&quot;]=&gt;
+  string(14) &quot;141.101.36.215&quot;
+  [&quot;server_port&quot;]=&gt;
+  string(3) &quot;443&quot;
+  [&quot;remote_addr&quot;]=&gt;
+  string(14) &quot;134.119.43.130&quot;
+  [&quot;document_root&quot;]=&gt;
+  string(41) &quot;/var/www/vhosts/nss-computerwissen.de/web&quot;
+  [&quot;request_scheme&quot;]=&gt;
+  string(5) &quot;https&quot;
+  [&quot;context_prefix&quot;]=&gt;
+  string(0) &quot;&quot;
+  [&quot;context_document_root&quot;]=&gt;
+  string(41) &quot;/var/www/vhosts/nss-computerwissen.de/web&quot;
+  [&quot;server_admin&quot;]=&gt;
+  string(27) &quot;dennis.grote@muahsystems.de&quot;
+  [&quot;script_filename&quot;]=&gt;
+  string(51) &quot;/var/www/vhosts/nss-computerwissen.de/web/index.php&quot;
+  [&quot;remote_port&quot;]=&gt;
+  string(5) &quot;54444&quot;
+  [&quot;redirect_url&quot;]=&gt;
+  string(4) &quot;/api&quot;
+  [&quot;gateway_interface&quot;]=&gt;
+  string(7) &quot;CGI/1.1&quot;
+  [&quot;server_protocol&quot;]=&gt;
+  string(8) &quot;HTTP/1.1&quot;
+  [&quot;request_method&quot;]=&gt;
+  string(4) &quot;POST&quot;
+  [&quot;query_string&quot;]=&gt;
+  string(0) &quot;&quot;
+  [&quot;request_uri&quot;]=&gt;
+  string(4) &quot;/api&quot;
+  [&quot;script_name&quot;]=&gt;
+  string(10) &quot;/index.php&quot;
+  [&quot;php_self&quot;]=&gt;
+  string(10) &quot;/index.php&quot;
+  [&quot;request_time_float&quot;]=&gt;
+  float(1571845787,376)
+  [&quot;request_time&quot;]=&gt;
+  int(1571845787)
+}
+">request_headers</a>
+  <a href="javascript:RenderPage(strController)" title="string(3) &quot;api&quot;
+">strController</a>
+  <a href="javascript:RenderPage(strModuleDirectory)" title="string(5) &quot;qcodo&quot;
+">strModuleDirectory</a>
+  <a href="javascript:RenderPage(strRequest)" title="string(591) &quot;{&quot;Method&quot;:&quot;Subscribe&quot;,&quot;Parameters&quot;:[&quot;rica841@gmx.de&quot;,[&quot;CWC&quot;,&quot;OS&quot;],&quot;114&quot;,&quot;77.78.160.212&quot;,&quot;https:\/\/club.computerwissen.de\/anmelden?task=user.login&quot;,&quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;,null,null,false,false,&quot;&quot;,&quot;Mozilla\/5.0 (X11; Linux x86_64) AppleWebKit\/537.36 (KHTML, like Gecko) Ubuntu Chromium\/77.0.3865.90 Chrome\/77.0.3865.90 Safari\/537.36&quot;,null,{&quot;attributeKey[0]&quot;:&quot;FIRST_NAME&quot;,&quot;attributeValue[0]&quot;:&quot;Uwe&quot;,&quot;attributeKey[1]&quot;:&quot;LAST_NAME&quot;,&quot;attributeValue[1]&quot;:&quot;Richter&quot;,&quot;attributeKey[2]&quot;:&quot;ANREDE&quot;,&quot;attributeValue[2]&quot;:&quot;H&quot;,&quot;immediateConfirmation&quot;:&quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;}]}&quot;
+">strRequest</a>
+  <a href="javascript:RenderPage(strUriArguments)" title="string(0) &quot;&quot;
+">strUriArguments</a>
+</pre><script type="text/javascript">  Request = "<pre>object(stdClass)#18 (2) {\n  [&quot;Method&quot;]=&gt;\n  string(9) &quot;Subscribe&quot;\n  [&quot;Parameters&quot;]=&gt;\n  array(14) {\n    [0]=&gt;\n    string(14) &quot;rica841@gmx.de&quot;\n    [1]=&gt;\n    array(2) {\n      [0]=&gt;\n      string(3) &quot;CWC&quot;\n      [1]=&gt;\n      string(2) &quot;OS&quot;\n    }\n    [2]=&gt;\n    string(3) &quot;114&quot;\n    [3]=&gt;\n    string(13) &quot;77.78.160.212&quot;\n    [4]=&gt;\n    string(55) &quot;https://club.computerwissen.de/anmelden?task=user.login&quot;\n    [5]=&gt;\n    string(38) &quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;\n    [6]=&gt;\n    NULL\n    [7]=&gt;\n    NULL\n    [8]=&gt;\n    bool(false)\n    [9]=&gt;\n    bool(false)\n    [10]=&gt;\n    string(0) &quot;&quot;\n    [11]=&gt;\n    string(133) &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/77.0.3865.90 Chrome/77.0.3865.90 Safari/537.36&quot;\n    [12]=&gt;\n    NULL\n    [13]=&gt;\n    object(stdClass)#19 (7) {\n      [&quot;attributeKey[0]&quot;]=&gt;\n      string(10) &quot;FIRST_NAME&quot;\n      [&quot;attributeValue[0]&quot;]=&gt;\n      string(3) &quot;Uwe&quot;\n      [&quot;attributeKey[1]&quot;]=&gt;\n      string(9) &quot;LAST_NAME&quot;\n      [&quot;attributeValue[1]&quot;]=&gt;\n      string(7) &quot;Richter&quot;\n      [&quot;attributeKey[2]&quot;]=&gt;\n      string(6) &quot;ANREDE&quot;\n      [&quot;attributeValue[2]&quot;]=&gt;\n      string(1) &quot;H&quot;\n      [&quot;immediateConfirmation&quot;]=&gt;\n      string(32) &quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;\n    }\n  }\n}\n</pre>";
+  _COOKIE = "<pre>array(0) {\n}\n</pre>";
+  _FILES = "<pre>array(0) {\n}\n</pre>";
+  _GET = "<pre>array(0) {\n}\n</pre>";
+  _POST = "<pre>array(1) {\n  [&quot;{&quot;Method&quot;:&quot;Subscribe&quot;,&quot;Parameters&quot;:&quot;]=&gt;\n  array(1) {\n    [&quot;&quot;rica841@gmx.de&quot;,[&quot;CWC&quot;,&quot;OS&quot;&quot;]=&gt;\n    string(454) &quot;user.login&quot;,&quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;,null,null,false,false,&quot;&quot;,&quot;Mozilla\\/5.0 (X11; Linux x86_64) AppleWebKit\\/537.36 (KHTML, like Gecko) Ubuntu Chromium\\/77.0.3865.90 Chrome\\/77.0.3865.90 Safari\\/537.36&quot;,null,{&quot;attributeKey[0]&quot;:&quot;FIRST_NAME&quot;,&quot;attributeValue[0]&quot;:&quot;Uwe&quot;,&quot;attributeKey[1]&quot;:&quot;LAST_NAME&quot;,&quot;attributeValue[1]&quot;:&quot;Richter&quot;,&quot;attributeKey[2]&quot;:&quot;ANREDE&quot;,&quot;attributeValue[2]&quot;:&quot;H&quot;,&quot;immediateConfirmation&quot;:&quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;}]}&quot;\n  }\n}\n</pre>";
+  _SERVER = "<pre>array(33) {\n  [&quot;REDIRECT_HTTPS&quot;]=&gt;\n  string(2) &quot;on&quot;\n  [&quot;REDIRECT_SSL_TLS_SNI&quot;]=&gt;\n  string(21) &quot;nss-computerwissen.de&quot;\n  [&quot;REDIRECT_STATUS&quot;]=&gt;\n  string(3) &quot;200&quot;\n  [&quot;HTTPS&quot;]=&gt;\n  string(2) &quot;on&quot;\n  [&quot;SSL_TLS_SNI&quot;]=&gt;\n  string(21) &quot;nss-computerwissen.de&quot;\n  [&quot;HTTP_HOST&quot;]=&gt;\n  string(21) &quot;nss-computerwissen.de&quot;\n  [&quot;HTTP_ACCEPT&quot;]=&gt;\n  string(3) &quot;*/*&quot;\n  [&quot;CONTENT_LENGTH&quot;]=&gt;\n  string(3) &quot;591&quot;\n  [&quot;CONTENT_TYPE&quot;]=&gt;\n  string(33) &quot;application/x-www-form-urlencoded&quot;\n  [&quot;PATH&quot;]=&gt;\n  string(60) &quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;\n  [&quot;SERVER_SIGNATURE&quot;]=&gt;\n  string(83) &quot;&lt;address&gt;Apache/2.4.25 (Debian) Server at nss-computerwissen.de Port 443&lt;/address&gt;\n&quot;\n  [&quot;SERVER_SOFTWARE&quot;]=&gt;\n  string(22) &quot;Apache/2.4.25 (Debian)&quot;\n  [&quot;SERVER_NAME&quot;]=&gt;\n  string(21) &quot;nss-computerwissen.de&quot;\n  [&quot;SERVER_ADDR&quot;]=&gt;\n  string(14) &quot;141.101.36.215&quot;\n  [&quot;SERVER_PORT&quot;]=&gt;\n  string(3) &quot;443&quot;\n  [&quot;REMOTE_ADDR&quot;]=&gt;\n  string(14) &quot;134.119.43.130&quot;\n  [&quot;DOCUMENT_ROOT&quot;]=&gt;\n  string(41) &quot;/var/www/vhosts/nss-computerwissen.de/web&quot;\n  [&quot;REQUEST_SCHEME&quot;]=&gt;\n  string(5) &quot;https&quot;\n  [&quot;CONTEXT_PREFIX&quot;]=&gt;\n  string(0) &quot;&quot;\n  [&quot;CONTEXT_DOCUMENT_ROOT&quot;]=&gt;\n  string(41) &quot;/var/www/vhosts/nss-computerwissen.de/web&quot;\n  [&quot;SERVER_ADMIN&quot;]=&gt;\n  string(27) &quot;dennis.grote@muahsystems.de&quot;\n  [&quot;SCRIPT_FILENAME&quot;]=&gt;\n  string(51) &quot;/var/www/vhosts/nss-computerwissen.de/web/index.php&quot;\n  [&quot;REMOTE_PORT&quot;]=&gt;\n  string(5) &quot;54444&quot;\n  [&quot;REDIRECT_URL&quot;]=&gt;\n  string(4) &quot;/api&quot;\n  [&quot;GATEWAY_INTERFACE&quot;]=&gt;\n  string(7) &quot;CGI/1.1&quot;\n  [&quot;SERVER_PROTOCOL&quot;]=&gt;\n  string(8) &quot;HTTP/1.1&quot;\n  [&quot;REQUEST_METHOD&quot;]=&gt;\n  string(4) &quot;POST&quot;\n  [&quot;QUERY_STRING&quot;]=&gt;\n  string(0) &quot;&quot;\n  [&quot;REQUEST_URI&quot;]=&gt;\n  string(4) &quot;/api&quot;\n  [&quot;SCRIPT_NAME&quot;]=&gt;\n  string(10) &quot;/index.php&quot;\n  [&quot;PHP_SELF&quot;]=&gt;\n  string(10) &quot;/index.php&quot;\n  [&quot;REQUEST_TIME_FLOAT&quot;]=&gt;\n  float(1571845787,376)\n  [&quot;REQUEST_TIME&quot;]=&gt;\n  int(1571845787)\n}\n</pre>";
+  _SESSION = "<pre>array (\n)</pre>";
+  allow_origin = "<pre>string(1) &quot;*&quot;\n</pre>";
+  request_headers = "<pre>array(33) {\n  [&quot;redirect_https&quot;]=&gt;\n  string(2) &quot;on&quot;\n  [&quot;redirect_ssl_tls_sni&quot;]=&gt;\n  string(21) &quot;nss-computerwissen.de&quot;\n  [&quot;redirect_status&quot;]=&gt;\n  string(3) &quot;200&quot;\n  [&quot;https&quot;]=&gt;\n  string(2) &quot;on&quot;\n  [&quot;ssl_tls_sni&quot;]=&gt;\n  string(21) &quot;nss-computerwissen.de&quot;\n  [&quot;http_host&quot;]=&gt;\n  string(21) &quot;nss-computerwissen.de&quot;\n  [&quot;http_accept&quot;]=&gt;\n  string(3) &quot;*/*&quot;\n  [&quot;content_length&quot;]=&gt;\n  string(3) &quot;591&quot;\n  [&quot;content_type&quot;]=&gt;\n  string(33) &quot;application/x-www-form-urlencoded&quot;\n  [&quot;path&quot;]=&gt;\n  string(60) &quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;\n  [&quot;server_signature&quot;]=&gt;\n  string(83) &quot;&lt;address&gt;Apache/2.4.25 (Debian) Server at nss-computerwissen.de Port 443&lt;/address&gt;\n&quot;\n  [&quot;server_software&quot;]=&gt;\n  string(22) &quot;Apache/2.4.25 (Debian)&quot;\n  [&quot;server_name&quot;]=&gt;\n  string(21) &quot;nss-computerwissen.de&quot;\n  [&quot;server_addr&quot;]=&gt;\n  string(14) &quot;141.101.36.215&quot;\n  [&quot;server_port&quot;]=&gt;\n  string(3) &quot;443&quot;\n  [&quot;remote_addr&quot;]=&gt;\n  string(14) &quot;134.119.43.130&quot;\n  [&quot;document_root&quot;]=&gt;\n  string(41) &quot;/var/www/vhosts/nss-computerwissen.de/web&quot;\n  [&quot;request_scheme&quot;]=&gt;\n  string(5) &quot;https&quot;\n  [&quot;context_prefix&quot;]=&gt;\n  string(0) &quot;&quot;\n  [&quot;context_document_root&quot;]=&gt;\n  string(41) &quot;/var/www/vhosts/nss-computerwissen.de/web&quot;\n  [&quot;server_admin&quot;]=&gt;\n  string(27) &quot;dennis.grote@muahsystems.de&quot;\n  [&quot;script_filename&quot;]=&gt;\n  string(51) &quot;/var/www/vhosts/nss-computerwissen.de/web/index.php&quot;\n  [&quot;remote_port&quot;]=&gt;\n  string(5) &quot;54444&quot;\n  [&quot;redirect_url&quot;]=&gt;\n  string(4) &quot;/api&quot;\n  [&quot;gateway_interface&quot;]=&gt;\n  string(7) &quot;CGI/1.1&quot;\n  [&quot;server_protocol&quot;]=&gt;\n  string(8) &quot;HTTP/1.1&quot;\n  [&quot;request_method&quot;]=&gt;\n  string(4) &quot;POST&quot;\n  [&quot;query_string&quot;]=&gt;\n  string(0) &quot;&quot;\n  [&quot;request_uri&quot;]=&gt;\n  string(4) &quot;/api&quot;\n  [&quot;script_name&quot;]=&gt;\n  string(10) &quot;/index.php&quot;\n  [&quot;php_self&quot;]=&gt;\n  string(10) &quot;/index.php&quot;\n  [&quot;request_time_float&quot;]=&gt;\n  float(1571845787,376)\n  [&quot;request_time&quot;]=&gt;\n  int(1571845787)\n}\n</pre>";
+  strController = "<pre>string(3) &quot;api&quot;\n</pre>";
+  strModuleDirectory = "<pre>string(5) &quot;qcodo&quot;\n</pre>";
+  strRequest = "<pre>string(591) &quot;{&quot;Method&quot;:&quot;Subscribe&quot;,&quot;Parameters&quot;:[&quot;rica841@gmx.de&quot;,[&quot;CWC&quot;,&quot;OS&quot;],&quot;114&quot;,&quot;77.78.160.212&quot;,&quot;https:\\/\\/club.computerwissen.de\\/anmelden?task=user.login&quot;,&quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;,null,null,false,false,&quot;&quot;,&quot;Mozilla\\/5.0 (X11; Linux x86_64) AppleWebKit\\/537.36 (KHTML, like Gecko) Ubuntu Chromium\\/77.0.3865.90 Chrome\\/77.0.3865.90 Safari\\/537.36&quot;,null,{&quot;attributeKey[0]&quot;:&quot;FIRST_NAME&quot;,&quot;attributeValue[0]&quot;:&quot;Uwe&quot;,&quot;attributeKey[1]&quot;:&quot;LAST_NAME&quot;,&quot;attributeValue[1]&quot;:&quot;Richter&quot;,&quot;attributeKey[2]&quot;:&quot;ANREDE&quot;,&quot;attributeValue[2]&quot;:&quot;H&quot;,&quot;immediateConfirmation&quot;:&quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;}]}&quot;\n</pre>";
+  strUriArguments = "<pre>string(0) &quot;&quot;\n</pre>";
+</script>			</div><br />
+			<hr width="100%" size="1" color="#dddddd" />
+			<center><em>
+				Exception Report Generated:&nbsp;&nbsp;Wednesday, October 23 2019, 5:50:09.44032000 PM CEST				<br/>
+				Exception Report NOT Logged
+			</em></center>
+	</div>
+	</body>
+</html>
+
+
+======================== 2020-07-18 03:09:18 ========
+<html>
+	<head>
+		<title>PHP Exception - Wrong parameters for Exception([string $message [, long $code [, Throwable $previous = NULL]]])</title>
+		<style>
+			body { font-family: 'Arial', 'Helvetica', 'sans-serif'; font-size: 11px; }
+			a:link, a:visited { text-decoration: none; }
+			a:hover { text-decoration: underline; }
+			pre { font-family: 'Lucida Console', 'Courier New', 'Courier', 'monospaced'; font-size: 11px; line-height: 13px; }
+			.page { padding: 10px; }
+			.headingLeft { background-color: #440066; color: #ffffff; padding: 10px 0px 10px 10px; font-family: 'Verdana', 'Arial', 'Helvetica', 'sans-serif'; font-size: 18px; font-weight: bold; width: 70%; vertical-align: middle; }
+			.headingLeftSmall { font-size: 10px; }
+			.headingRight { background-color: #440066; color: #ffffff; padding: 0px 10px 10px 10px; font-family: 'Verdana', 'Arial', 'Helvetica', 'sans-serif'; font-size: 10px; width: 30%; vertical-align: middle; text-align: right; }
+			.title { font-family: 'Verdana', 'Arial', 'Helvetica', 'sans-serif'; font-size: 19px; font-style: italic; color: #330055; }
+			.code { background-color: #f4eeff; padding: 1px 10px 1px 10px; }
+		</style>
+		<script type="text/javascript">
+			function RenderPage(strHtml) { document.rendered.strHtml.value = strHtml; document.rendered.submit(); }
+			function ToggleHidden(strDiv) { var obj = document.getElementById(strDiv); var stlSection = obj.style; var isCollapsed = obj.style.display.length; if (isCollapsed) stlSection.display = ''; else stlSection.display = 'none'; }
+		</script>
+	</head>
+	<body bgcolor="white" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0"> 
+
+	<table border="0" cellspacing="0" width="100%">
+		<tr>
+			<td nowrap="nowrap" class="headingLeft"><span class="headingLeftSmall">Exception in PHP Script<br /></span>/index.php</td>
+			<td nowrap="nowrap" class="headingRight">
+				<b>PHP Version:</b> 7.0.33-0+deb9u1;&nbsp;&nbsp;<b>Zend Engine Version:</b> 3.0.0;&nbsp;&nbsp;<b>Qcodo Version:</b> 0.4.22<br />
+				<b>Application:</b> Apache/2.4.25 (Debian);&nbsp;&nbsp;<b>Server Name:</b> nss-computerwissen.de<br />
+				<b>HTTP User Agent:</b> <br />
+<b>Notice</b>:  Undefined index: HTTP_USER_AGENT in <b>/var/www/vhosts/nss-computerwissen.de/module/qcodo/includes/qcodo/_core/assets/error_dump.inc.php</b> on line <b>34</b><br />
+</td>
+		</tr>
+	</table>
+	
+	<div class="page">
+		<span class="title">Wrong&nbsp;parameters&nbsp;for&nbsp;Exception([string&nbsp;$message&nbsp;[,&nbsp;long&nbsp;$code&nbsp;[,&nbsp;Throwable&nbsp;$previous&nbsp;=&nbsp;NULL]]])</span><br />
+		<form method="post" action="/assets/php/_core/error_already_rendered_page.php" target="blank" name="rendered"><input type="hidden" name="strHtml" value=""></form>
+
+			<b>Exception Type:</b>&nbsp;&nbsp;
+			Error			<br /><br />
+
+			<b>Source File:</b>&nbsp;&nbsp;
+			/var/www/vhosts/nss-computerwissen.de/module/qcodo/includes/data_classes/Reward.class.php			&nbsp;&nbsp;&nbsp;&nbsp;<b>Line:</b>&nbsp;&nbsp;
+			20			<br /><br />
+
+			<div class="code">
+<pre>Line 15:    			$Email = Email::CreateFromView($strEmailAddress,View::Create(sprintf(&quot;temp/%s&quot;,$strFilename),$aryUrls));
+Line 16:    			unlink(BASE_DIR.sprintf(&quot;/view/temp/%s.php&quot;,$strFilename));
+Line 17:    			$Email-&gt;SenderName = $this-&gt;SenderName;
+Line 18:    			$Email-&gt;SenderAddress = $this-&gt;SenderAddress;
+Line 19:    			$Email-&gt;Subject = $this-&gt;Subject;
+<span style="color: #f00;">Line 20:    			if(!$Email-&gt;DeliverViaSmtp()) throw new Exception(&quot;Could not send a reward mail to %s&quot;,$strEmailAddress);
+</span>Line 21:    			return true;
+Line 22:    		} catch(Exception $Exception){
+Line 23:    			Errors::Register(&quot;Exception&quot;,$Exception-&gt;getMessage(),E_CORE_ERROR,$Exception-&gt;getCode(),$Exception-&gt;getFile(),$Exception-&gt;getLine());
+Line 24:    			return false;
+Line 25:    		}
+</pre>			</div><br />
+			
+
+			<b>Call Stack:</b>
+			<br><br>
+			<div class="code">
+				<pre>#0 /var/www/vhosts/nss-computerwissen.de/module/qcodo/includes/data_classes/Reward.class.php(20): Exception-&gt;__construct('Could not send ...', 'emile.lemonnier...')
+#1 /var/www/vhosts/nss-computerwissen.de/module/qcodo/includes/data_classes/Process.class.php(464): Reward-&gt;Deliver('emile.lemonnier...', 2419561, 36)
+#2 /var/www/vhosts/nss-computerwissen.de/core/Api.class.php(25): Process::Start('emile.lemonnier...', Array, '114', '212.202.221.10', 'https://club.co...', 'SEO_CW_CWC_WEB...', NULL, NULL, false, false, '', 'Mozilla/5.0 (Wi...', NULL, Object(stdClass))
+#3 /var/www/vhosts/nss-computerwissen.de/controller/api.php(131): Api::Subscribe('emile.lemonnier...', Array, '114', '212.202.221.10', 'https://club.co...', 'SEO_CW_CWC_WEB...', NULL, NULL, false, false, '', 'Mozilla/5.0 (Wi...', NULL, Object(stdClass))
+#4 /var/www/vhosts/nss-computerwissen.de/web/index.php(28): require('/var/www/vhosts...')
+#5 {main}</pre>
+			</div><br />
+
+			<b>Global Variables Dump:</b>&nbsp;&nbsp;
+			<a href="javascript:ToggleHidden('VariableDump')">Show/Hide</a>
+			<br /><br />
+			<div id="VariableDump" class="code" style="Display: none;">
+<pre>  <a href="javascript:RenderPage(_COOKIE)" title="array(0) {
+}
+">_COOKIE</a>
+  <a href="javascript:RenderPage(_FILES)" title="array(0) {
+}
+">_FILES</a>
+  <a href="javascript:RenderPage(_GET)" title="array(0) {
+}
+">_GET</a>
+  <a href="javascript:RenderPage(_POST)" title="array(3) {
+  [&quot;{&quot;Method&quot;:&quot;Subscribe&quot;,&quot;Parameters&quot;:&quot;]=&gt;
+  array(1) {
+    [&quot;&quot;emile.lemonnier72@gmail.com&quot;,[&quot;CWC&quot;,&quot;WS&quot;,&quot;OS&quot;,&quot;DL&quot;,&quot;VIT&quot;,&quot;OP&quot;&quot;]=&gt;
+    string(9) &quot;com_users&quot;
+  }
+  [&quot;task&quot;]=&gt;
+  string(21) &quot;registration.activate&quot;
+  [&quot;token&quot;]=&gt;
+  string(478) &quot;c1LPwzF703vHypbrgh4uk6mZoilnJTME&quot;,&quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;,null,null,false,false,&quot;&quot;,&quot;Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/83.0.4103.116 Safari\/537.36 Edg\/83.0.478.64&quot;,null,{&quot;attributeKey[0]&quot;:&quot;FIRST_NAME&quot;,&quot;attributeValue[0]&quot;:&quot;Lemonnier&quot;,&quot;attributeKey[1]&quot;:&quot;LAST_NAME&quot;,&quot;attributeValue[1]&quot;:&quot;Emile&quot;,&quot;attributeKey[2]&quot;:&quot;ANREDE&quot;,&quot;attributeValue[2]&quot;:&quot;H&quot;,&quot;immediateConfirmation&quot;:&quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;}]}&quot;
+}
+">_POST</a>
+  <a href="javascript:RenderPage(_SERVER)" title="array(33) {
+  [&quot;REDIRECT_HTTPS&quot;]=&gt;
+  string(2) &quot;on&quot;
+  [&quot;REDIRECT_SSL_TLS_SNI&quot;]=&gt;
+  string(21) &quot;nss-computerwissen.de&quot;
+  [&quot;REDIRECT_STATUS&quot;]=&gt;
+  string(3) &quot;200&quot;
+  [&quot;HTTPS&quot;]=&gt;
+  string(2) &quot;on&quot;
+  [&quot;SSL_TLS_SNI&quot;]=&gt;
+  string(21) &quot;nss-computerwissen.de&quot;
+  [&quot;HTTP_HOST&quot;]=&gt;
+  string(21) &quot;nss-computerwissen.de&quot;
+  [&quot;HTTP_ACCEPT&quot;]=&gt;
+  string(3) &quot;*/*&quot;
+  [&quot;CONTENT_LENGTH&quot;]=&gt;
+  string(3) &quot;696&quot;
+  [&quot;CONTENT_TYPE&quot;]=&gt;
+  string(33) &quot;application/x-www-form-urlencoded&quot;
+  [&quot;PATH&quot;]=&gt;
+  string(60) &quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;
+  [&quot;SERVER_SIGNATURE&quot;]=&gt;
+  string(83) &quot;&lt;address&gt;Apache/2.4.25 (Debian) Server at nss-computerwissen.de Port 443&lt;/address&gt;
+&quot;
+  [&quot;SERVER_SOFTWARE&quot;]=&gt;
+  string(22) &quot;Apache/2.4.25 (Debian)&quot;
+  [&quot;SERVER_NAME&quot;]=&gt;
+  string(21) &quot;nss-computerwissen.de&quot;
+  [&quot;SERVER_ADDR&quot;]=&gt;
+  string(14) &quot;141.101.36.215&quot;
+  [&quot;SERVER_PORT&quot;]=&gt;
+  string(3) &quot;443&quot;
+  [&quot;REMOTE_ADDR&quot;]=&gt;
+  string(14) &quot;134.119.43.130&quot;
+  [&quot;DOCUMENT_ROOT&quot;]=&gt;
+  string(41) &quot;/var/www/vhosts/nss-computerwissen.de/web&quot;
+  [&quot;REQUEST_SCHEME&quot;]=&gt;
+  string(5) &quot;https&quot;
+  [&quot;CONTEXT_PREFIX&quot;]=&gt;
+  string(0) &quot;&quot;
+  [&quot;CONTEXT_DOCUMENT_ROOT&quot;]=&gt;
+  string(41) &quot;/var/www/vhosts/nss-computerwissen.de/web&quot;
+  [&quot;SERVER_ADMIN&quot;]=&gt;
+  string(27) &quot;dennis.grote@muahsystems.de&quot;
+  [&quot;SCRIPT_FILENAME&quot;]=&gt;
+  string(51) &quot;/var/www/vhosts/nss-computerwissen.de/web/index.php&quot;
+  [&quot;REMOTE_PORT&quot;]=&gt;
+  string(5) &quot;57523&quot;
+  [&quot;REDIRECT_URL&quot;]=&gt;
+  string(4) &quot;/api&quot;
+  [&quot;GATEWAY_INTERFACE&quot;]=&gt;
+  string(7) &quot;CGI/1.1&quot;
+  [&quot;SERVER_PROTOCOL&quot;]=&gt;
+  string(8) &quot;HTTP/1.1&quot;
+  [&quot;REQUEST_METHOD&quot;]=&gt;
+  string(4) &quot;POST&quot;
+  [&quot;QUERY_STRING&quot;]=&gt;
+  string(0) &quot;&quot;
+  [&quot;REQUEST_URI&quot;]=&gt;
+  string(4) &quot;/api&quot;
+  [&quot;SCRIPT_NAME&quot;]=&gt;
+  string(10) &quot;/index.php&quot;
+  [&quot;PHP_SELF&quot;]=&gt;
+  string(10) &quot;/index.php&quot;
+  [&quot;REQUEST_TIME_FLOAT&quot;]=&gt;
+  float(1595034554,946)
+  [&quot;REQUEST_TIME&quot;]=&gt;
+  int(1595034554)
+}
+">_SERVER</a>
+  <a href="javascript:RenderPage(_SESSION)" title="array (
+)">_SESSION</a>
+  <a href="javascript:RenderPage(cache_enabled)" title="bool(true)
+">cache_enabled</a>
+  <a href="javascript:RenderPage(cached_response)" title="bool(false)
+">cached_response</a>
+  <a href="javascript:RenderPage(doc_comment)" title="string(506) &quot;/**
+	 * @param string $EmailAddress
+	 * @param string[]|string $NewsletterAbbreviations
+	 * @param string $OptInProcessId
+	 * @param string $CustomerRemoteAddress
+	 * @param string $CallingService
+	 * @param string|null $Affiliate
+	 * @param string|null $VisitorId
+	 * @param string|null $SessionId
+	 * @param bool $TraderFox
+	 * @param bool $Bullvestor
+	 * @param string $Coreg
+	 * @param string $strUserAgent
+	 * @param string $strAdref
+	 * @param stdClass $stdAdditionalProperties
+	 * @return array
+	 */&quot;
+">doc_comment</a>
+  <a href="javascript:RenderPage(matches)" title="array(0) {
+}
+">matches</a>
+  <a href="javascript:RenderPage(output)" title="string(4) &quot;json&quot;
+">output</a>
+  <a href="javascript:RenderPage(raw_request)" title="string(696) &quot;{&quot;Method&quot;:&quot;Subscribe&quot;,&quot;Parameters&quot;:[&quot;emile.lemonnier72@gmail.com&quot;,[&quot;CWC&quot;,&quot;WS&quot;,&quot;OS&quot;,&quot;DL&quot;,&quot;VIT&quot;,&quot;OP&quot;],&quot;114&quot;,&quot;212.202.221.10&quot;,&quot;https:\/\/club.computerwissen.de\/index.php?option=com_users&amp;task=registration.activate&amp;token=c1LPwzF703vHypbrgh4uk6mZoilnJTME&quot;,&quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;,null,null,false,false,&quot;&quot;,&quot;Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/83.0.4103.116 Safari\/537.36 Edg\/83.0.478.64&quot;,null,{&quot;attributeKey[0]&quot;:&quot;FIRST_NAME&quot;,&quot;attributeValue[0]&quot;:&quot;Lemonnier&quot;,&quot;attributeKey[1]&quot;:&quot;LAST_NAME&quot;,&quot;attributeValue[1]&quot;:&quot;Emile&quot;,&quot;attributeKey[2]&quot;:&quot;ANREDE&quot;,&quot;attributeValue[2]&quot;:&quot;H&quot;,&quot;immediateConfirmation&quot;:&quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;}]}&quot;
+">raw_request</a>
+  <a href="javascript:RenderPage(redis)" title="object(Naytec\Redis)#22 (1) {
+  [&quot;socket&quot;]=&gt;
+  resource(8) of type (Redis Socket Buffer)
+}
+">redis</a>
+  <a href="javascript:RenderPage(reflection_method)" title="object(ReflectionMethod)#21 (2) {
+  [&quot;name&quot;]=&gt;
+  string(9) &quot;Subscribe&quot;
+  [&quot;class&quot;]=&gt;
+  string(3) &quot;Api&quot;
+}
+">reflection_method</a>
+  <a href="javascript:RenderPage(request)" title="object(stdClass)#19 (2) {
+  [&quot;Method&quot;]=&gt;
+  string(9) &quot;Subscribe&quot;
+  [&quot;Parameters&quot;]=&gt;
+  array(14) {
+    [0]=&gt;
+    string(27) &quot;emile.lemonnier72@gmail.com&quot;
+    [1]=&gt;
+    array(6) {
+      [0]=&gt;
+      string(3) &quot;CWC&quot;
+      [1]=&gt;
+      string(2) &quot;WS&quot;
+      [2]=&gt;
+      string(2) &quot;OS&quot;
+      [3]=&gt;
+      string(2) &quot;DL&quot;
+      [4]=&gt;
+      string(3) &quot;VIT&quot;
+      [5]=&gt;
+      string(2) &quot;OP&quot;
+    }
+    [2]=&gt;
+    string(3) &quot;114&quot;
+    [3]=&gt;
+    string(14) &quot;212.202.221.10&quot;
+    [4]=&gt;
+    string(123) &quot;https://club.computerwissen.de/index.php?option=com_users&amp;task=registration.activate&amp;token=c1LPwzF703vHypbrgh4uk6mZoilnJTME&quot;
+    [5]=&gt;
+    string(38) &quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;
+    [6]=&gt;
+    NULL
+    [7]=&gt;
+    NULL
+    [8]=&gt;
+    bool(false)
+    [9]=&gt;
+    bool(false)
+    [10]=&gt;
+    string(0) &quot;&quot;
+    [11]=&gt;
+    string(131) &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36 Edg/83.0.478.64&quot;
+    [12]=&gt;
+    NULL
+    [13]=&gt;
+    object(stdClass)#20 (7) {
+      [&quot;attributeKey[0]&quot;]=&gt;
+      string(10) &quot;FIRST_NAME&quot;
+      [&quot;attributeValue[0]&quot;]=&gt;
+      string(9) &quot;Lemonnier&quot;
+      [&quot;attributeKey[1]&quot;]=&gt;
+      string(9) &quot;LAST_NAME&quot;
+      [&quot;attributeValue[1]&quot;]=&gt;
+      string(5) &quot;Emile&quot;
+      [&quot;attributeKey[2]&quot;]=&gt;
+      string(6) &quot;ANREDE&quot;
+      [&quot;attributeValue[2]&quot;]=&gt;
+      string(1) &quot;H&quot;
+      [&quot;immediateConfirmation&quot;]=&gt;
+      string(32) &quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;
+    }
+  }
+}
+">request</a>
+  <a href="javascript:RenderPage(request_key_prefix)" title="string(43) &quot;Subscribe(0d3d171c76567a8e6155755171666463)&quot;
+">request_key_prefix</a>
+  <a href="javascript:RenderPage(response)" title="array(2) {
+  [&quot;result&quot;]=&gt;
+  NULL
+  [&quot;errors&quot;]=&gt;
+  array(0) {
+  }
+}
+">response</a>
+  <a href="javascript:RenderPage(strController)" title="string(3) &quot;api&quot;
+">strController</a>
+  <a href="javascript:RenderPage(strModuleDirectory)" title="string(5) &quot;qcodo&quot;
+">strModuleDirectory</a>
+  <a href="javascript:RenderPage(strUriArguments)" title="string(0) &quot;&quot;
+">strUriArguments</a>
+</pre><script type="text/javascript">  _COOKIE = "<pre>array(0) {\n}\n</pre>";
+  _FILES = "<pre>array(0) {\n}\n</pre>";
+  _GET = "<pre>array(0) {\n}\n</pre>";
+  _POST = "<pre>array(3) {\n  [&quot;{&quot;Method&quot;:&quot;Subscribe&quot;,&quot;Parameters&quot;:&quot;]=&gt;\n  array(1) {\n    [&quot;&quot;emile.lemonnier72@gmail.com&quot;,[&quot;CWC&quot;,&quot;WS&quot;,&quot;OS&quot;,&quot;DL&quot;,&quot;VIT&quot;,&quot;OP&quot;&quot;]=&gt;\n    string(9) &quot;com_users&quot;\n  }\n  [&quot;task&quot;]=&gt;\n  string(21) &quot;registration.activate&quot;\n  [&quot;token&quot;]=&gt;\n  string(478) &quot;c1LPwzF703vHypbrgh4uk6mZoilnJTME&quot;,&quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;,null,null,false,false,&quot;&quot;,&quot;Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/83.0.4103.116 Safari\\/537.36 Edg\\/83.0.478.64&quot;,null,{&quot;attributeKey[0]&quot;:&quot;FIRST_NAME&quot;,&quot;attributeValue[0]&quot;:&quot;Lemonnier&quot;,&quot;attributeKey[1]&quot;:&quot;LAST_NAME&quot;,&quot;attributeValue[1]&quot;:&quot;Emile&quot;,&quot;attributeKey[2]&quot;:&quot;ANREDE&quot;,&quot;attributeValue[2]&quot;:&quot;H&quot;,&quot;immediateConfirmation&quot;:&quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;}]}&quot;\n}\n</pre>";
+  _SERVER = "<pre>array(33) {\n  [&quot;REDIRECT_HTTPS&quot;]=&gt;\n  string(2) &quot;on&quot;\n  [&quot;REDIRECT_SSL_TLS_SNI&quot;]=&gt;\n  string(21) &quot;nss-computerwissen.de&quot;\n  [&quot;REDIRECT_STATUS&quot;]=&gt;\n  string(3) &quot;200&quot;\n  [&quot;HTTPS&quot;]=&gt;\n  string(2) &quot;on&quot;\n  [&quot;SSL_TLS_SNI&quot;]=&gt;\n  string(21) &quot;nss-computerwissen.de&quot;\n  [&quot;HTTP_HOST&quot;]=&gt;\n  string(21) &quot;nss-computerwissen.de&quot;\n  [&quot;HTTP_ACCEPT&quot;]=&gt;\n  string(3) &quot;*/*&quot;\n  [&quot;CONTENT_LENGTH&quot;]=&gt;\n  string(3) &quot;696&quot;\n  [&quot;CONTENT_TYPE&quot;]=&gt;\n  string(33) &quot;application/x-www-form-urlencoded&quot;\n  [&quot;PATH&quot;]=&gt;\n  string(60) &quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;\n  [&quot;SERVER_SIGNATURE&quot;]=&gt;\n  string(83) &quot;&lt;address&gt;Apache/2.4.25 (Debian) Server at nss-computerwissen.de Port 443&lt;/address&gt;\n&quot;\n  [&quot;SERVER_SOFTWARE&quot;]=&gt;\n  string(22) &quot;Apache/2.4.25 (Debian)&quot;\n  [&quot;SERVER_NAME&quot;]=&gt;\n  string(21) &quot;nss-computerwissen.de&quot;\n  [&quot;SERVER_ADDR&quot;]=&gt;\n  string(14) &quot;141.101.36.215&quot;\n  [&quot;SERVER_PORT&quot;]=&gt;\n  string(3) &quot;443&quot;\n  [&quot;REMOTE_ADDR&quot;]=&gt;\n  string(14) &quot;134.119.43.130&quot;\n  [&quot;DOCUMENT_ROOT&quot;]=&gt;\n  string(41) &quot;/var/www/vhosts/nss-computerwissen.de/web&quot;\n  [&quot;REQUEST_SCHEME&quot;]=&gt;\n  string(5) &quot;https&quot;\n  [&quot;CONTEXT_PREFIX&quot;]=&gt;\n  string(0) &quot;&quot;\n  [&quot;CONTEXT_DOCUMENT_ROOT&quot;]=&gt;\n  string(41) &quot;/var/www/vhosts/nss-computerwissen.de/web&quot;\n  [&quot;SERVER_ADMIN&quot;]=&gt;\n  string(27) &quot;dennis.grote@muahsystems.de&quot;\n  [&quot;SCRIPT_FILENAME&quot;]=&gt;\n  string(51) &quot;/var/www/vhosts/nss-computerwissen.de/web/index.php&quot;\n  [&quot;REMOTE_PORT&quot;]=&gt;\n  string(5) &quot;57523&quot;\n  [&quot;REDIRECT_URL&quot;]=&gt;\n  string(4) &quot;/api&quot;\n  [&quot;GATEWAY_INTERFACE&quot;]=&gt;\n  string(7) &quot;CGI/1.1&quot;\n  [&quot;SERVER_PROTOCOL&quot;]=&gt;\n  string(8) &quot;HTTP/1.1&quot;\n  [&quot;REQUEST_METHOD&quot;]=&gt;\n  string(4) &quot;POST&quot;\n  [&quot;QUERY_STRING&quot;]=&gt;\n  string(0) &quot;&quot;\n  [&quot;REQUEST_URI&quot;]=&gt;\n  string(4) &quot;/api&quot;\n  [&quot;SCRIPT_NAME&quot;]=&gt;\n  string(10) &quot;/index.php&quot;\n  [&quot;PHP_SELF&quot;]=&gt;\n  string(10) &quot;/index.php&quot;\n  [&quot;REQUEST_TIME_FLOAT&quot;]=&gt;\n  float(1595034554,946)\n  [&quot;REQUEST_TIME&quot;]=&gt;\n  int(1595034554)\n}\n</pre>";
+  _SESSION = "<pre>array (\n)</pre>";
+  cache_enabled = "<pre>bool(true)\n</pre>";
+  cached_response = "<pre>bool(false)\n</pre>";
+  doc_comment = "<pre>string(506) &quot;/**\n	 * @param string $EmailAddress\n	 * @param string[]|string $NewsletterAbbreviations\n	 * @param string $OptInProcessId\n	 * @param string $CustomerRemoteAddress\n	 * @param string $CallingService\n	 * @param string|null $Affiliate\n	 * @param string|null $VisitorId\n	 * @param string|null $SessionId\n	 * @param bool $TraderFox\n	 * @param bool $Bullvestor\n	 * @param string $Coreg\n	 * @param string $strUserAgent\n	 * @param string $strAdref\n	 * @param stdClass $stdAdditionalProperties\n	 * @return array\n	 */&quot;\n</pre>";
+  matches = "<pre>array(0) {\n}\n</pre>";
+  output = "<pre>string(4) &quot;json&quot;\n</pre>";
+  raw_request = "<pre>string(696) &quot;{&quot;Method&quot;:&quot;Subscribe&quot;,&quot;Parameters&quot;:[&quot;emile.lemonnier72@gmail.com&quot;,[&quot;CWC&quot;,&quot;WS&quot;,&quot;OS&quot;,&quot;DL&quot;,&quot;VIT&quot;,&quot;OP&quot;],&quot;114&quot;,&quot;212.202.221.10&quot;,&quot;https:\\/\\/club.computerwissen.de\\/index.php?option=com_users&amp;task=registration.activate&amp;token=c1LPwzF703vHypbrgh4uk6mZoilnJTME&quot;,&quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;,null,null,false,false,&quot;&quot;,&quot;Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/83.0.4103.116 Safari\\/537.36 Edg\\/83.0.478.64&quot;,null,{&quot;attributeKey[0]&quot;:&quot;FIRST_NAME&quot;,&quot;attributeValue[0]&quot;:&quot;Lemonnier&quot;,&quot;attributeKey[1]&quot;:&quot;LAST_NAME&quot;,&quot;attributeValue[1]&quot;:&quot;Emile&quot;,&quot;attributeKey[2]&quot;:&quot;ANREDE&quot;,&quot;attributeValue[2]&quot;:&quot;H&quot;,&quot;immediateConfirmation&quot;:&quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;}]}&quot;\n</pre>";
+  redis = "<pre>object(Naytec\\Redis)#22 (1) {\n  [&quot;socket&quot;]=&gt;\n  resource(8) of type (Redis Socket Buffer)\n}\n</pre>";
+  reflection_method = "<pre>object(ReflectionMethod)#21 (2) {\n  [&quot;name&quot;]=&gt;\n  string(9) &quot;Subscribe&quot;\n  [&quot;class&quot;]=&gt;\n  string(3) &quot;Api&quot;\n}\n</pre>";
+  request = "<pre>object(stdClass)#19 (2) {\n  [&quot;Method&quot;]=&gt;\n  string(9) &quot;Subscribe&quot;\n  [&quot;Parameters&quot;]=&gt;\n  array(14) {\n    [0]=&gt;\n    string(27) &quot;emile.lemonnier72@gmail.com&quot;\n    [1]=&gt;\n    array(6) {\n      [0]=&gt;\n      string(3) &quot;CWC&quot;\n      [1]=&gt;\n      string(2) &quot;WS&quot;\n      [2]=&gt;\n      string(2) &quot;OS&quot;\n      [3]=&gt;\n      string(2) &quot;DL&quot;\n      [4]=&gt;\n      string(3) &quot;VIT&quot;\n      [5]=&gt;\n      string(2) &quot;OP&quot;\n    }\n    [2]=&gt;\n    string(3) &quot;114&quot;\n    [3]=&gt;\n    string(14) &quot;212.202.221.10&quot;\n    [4]=&gt;\n    string(123) &quot;https://club.computerwissen.de/index.php?option=com_users&amp;task=registration.activate&amp;token=c1LPwzF703vHypbrgh4uk6mZoilnJTME&quot;\n    [5]=&gt;\n    string(38) &quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;\n    [6]=&gt;\n    NULL\n    [7]=&gt;\n    NULL\n    [8]=&gt;\n    bool(false)\n    [9]=&gt;\n    bool(false)\n    [10]=&gt;\n    string(0) &quot;&quot;\n    [11]=&gt;\n    string(131) &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36 Edg/83.0.478.64&quot;\n    [12]=&gt;\n    NULL\n    [13]=&gt;\n    object(stdClass)#20 (7) {\n      [&quot;attributeKey[0]&quot;]=&gt;\n      string(10) &quot;FIRST_NAME&quot;\n      [&quot;attributeValue[0]&quot;]=&gt;\n      string(9) &quot;Lemonnier&quot;\n      [&quot;attributeKey[1]&quot;]=&gt;\n      string(9) &quot;LAST_NAME&quot;\n      [&quot;attributeValue[1]&quot;]=&gt;\n      string(5) &quot;Emile&quot;\n      [&quot;attributeKey[2]&quot;]=&gt;\n      string(6) &quot;ANREDE&quot;\n      [&quot;attributeValue[2]&quot;]=&gt;\n      string(1) &quot;H&quot;\n      [&quot;immediateConfirmation&quot;]=&gt;\n      string(32) &quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;\n    }\n  }\n}\n</pre>";
+  request_key_prefix = "<pre>string(43) &quot;Subscribe(0d3d171c76567a8e6155755171666463)&quot;\n</pre>";
+  response = "<pre>array(2) {\n  [&quot;result&quot;]=&gt;\n  NULL\n  [&quot;errors&quot;]=&gt;\n  array(0) {\n  }\n}\n</pre>";
+  strController = "<pre>string(3) &quot;api&quot;\n</pre>";
+  strModuleDirectory = "<pre>string(5) &quot;qcodo&quot;\n</pre>";
+  strUriArguments = "<pre>string(0) &quot;&quot;\n</pre>";
+</script>			</div><br />
+			<hr width="100%" size="1" color="#dddddd" />
+			<center><em>
+				Exception Report Generated:&nbsp;&nbsp;Saturday, July 18 2020, 3:09:18.81181800 AM CEST				<br/>
+				Exception Report NOT Logged
+			</em></center>
+	</div>
+	</body>
+</html>
+
+
+======================== 2020-11-23 15:42:49 ========
+<html>
+	<head>
+		<title>PHP Exception - Wrong parameters for Exception([string $message [, long $code [, Throwable $previous = NULL]]])</title>
+		<style>
+			body { font-family: 'Arial', 'Helvetica', 'sans-serif'; font-size: 11px; }
+			a:link, a:visited { text-decoration: none; }
+			a:hover { text-decoration: underline; }
+			pre { font-family: 'Lucida Console', 'Courier New', 'Courier', 'monospaced'; font-size: 11px; line-height: 13px; }
+			.page { padding: 10px; }
+			.headingLeft { background-color: #440066; color: #ffffff; padding: 10px 0px 10px 10px; font-family: 'Verdana', 'Arial', 'Helvetica', 'sans-serif'; font-size: 18px; font-weight: bold; width: 70%; vertical-align: middle; }
+			.headingLeftSmall { font-size: 10px; }
+			.headingRight { background-color: #440066; color: #ffffff; padding: 0px 10px 10px 10px; font-family: 'Verdana', 'Arial', 'Helvetica', 'sans-serif'; font-size: 10px; width: 30%; vertical-align: middle; text-align: right; }
+			.title { font-family: 'Verdana', 'Arial', 'Helvetica', 'sans-serif'; font-size: 19px; font-style: italic; color: #330055; }
+			.code { background-color: #f4eeff; padding: 1px 10px 1px 10px; }
+		</style>
+		<script type="text/javascript">
+			function RenderPage(strHtml) { document.rendered.strHtml.value = strHtml; document.rendered.submit(); }
+			function ToggleHidden(strDiv) { var obj = document.getElementById(strDiv); var stlSection = obj.style; var isCollapsed = obj.style.display.length; if (isCollapsed) stlSection.display = ''; else stlSection.display = 'none'; }
+		</script>
+	</head>
+	<body bgcolor="white" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0"> 
+
+	<table border="0" cellspacing="0" width="100%">
+		<tr>
+			<td nowrap="nowrap" class="headingLeft"><span class="headingLeftSmall">Exception in PHP Script<br /></span>/index.php</td>
+			<td nowrap="nowrap" class="headingRight">
+				<b>PHP Version:</b> 7.0.33-0+deb9u1;&nbsp;&nbsp;<b>Zend Engine Version:</b> 3.0.0;&nbsp;&nbsp;<b>Qcodo Version:</b> 0.4.22<br />
+				<b>Application:</b> Apache/2.4.25 (Debian);&nbsp;&nbsp;<b>Server Name:</b> nss-computerwissen.de<br />
+				<b>HTTP User Agent:</b> </td>
+		</tr>
+	</table>
+	
+	<div class="page">
+		<span class="title">Wrong&nbsp;parameters&nbsp;for&nbsp;Exception([string&nbsp;$message&nbsp;[,&nbsp;long&nbsp;$code&nbsp;[,&nbsp;Throwable&nbsp;$previous&nbsp;=&nbsp;NULL]]])</span><br />
+		<form method="post" action="/assets/php/_core/error_already_rendered_page.php" target="blank" name="rendered"><input type="hidden" name="strHtml" value=""></form>
+
+			<b>Exception Type:</b>&nbsp;&nbsp;
+			Error			<br /><br />
+
+			<b>Source File:</b>&nbsp;&nbsp;
+			/var/www/vhosts/nss/module/qcodo/includes/data_classes/Reward.class.php			&nbsp;&nbsp;&nbsp;&nbsp;<b>Line:</b>&nbsp;&nbsp;
+			20			<br /><br />
+
+			<div class="code">
+<pre>Line 15:    			$Email = Email::CreateFromView($strEmailAddress,View::Create(sprintf(&quot;temp/%s&quot;,$strFilename),$aryUrls));
+Line 16:    			unlink(BASE_DIR.sprintf(&quot;/view/temp/%s.php&quot;,$strFilename));
+Line 17:    			$Email-&gt;SenderName = $this-&gt;SenderName;
+Line 18:    			$Email-&gt;SenderAddress = $this-&gt;SenderAddress;
+Line 19:    			$Email-&gt;Subject = $this-&gt;Subject;
+<span style="color: #f00;">Line 20:    			if(!$Email-&gt;DeliverViaSmtp()) throw new Exception(&quot;Could not send a reward mail to %s&quot;,$strEmailAddress);
+</span>Line 21:    			return true;
+Line 22:    		} catch(Exception $Exception){
+Line 23:    			Errors::Register(&quot;Exception&quot;,$Exception-&gt;getMessage(),E_CORE_ERROR,$Exception-&gt;getCode(),$Exception-&gt;getFile(),$Exception-&gt;getLine());
+Line 24:    			return false;
+Line 25:    		}
+</pre>			</div><br />
+			
+
+			<b>Call Stack:</b>
+			<br><br>
+			<div class="code">
+				<pre>#0 /var/www/vhosts/nss/module/qcodo/includes/data_classes/Reward.class.php(20): Exception-&gt;__construct('Could not send ...', 'kuenstlerschrei...')
+#1 /var/www/vhosts/nss/module/qcodo/includes/data_classes/Process.class.php(510): Reward-&gt;Deliver('kuenstlerschrei...', 3042635, 36)
+#2 /var/www/vhosts/nss/function_library/api/subscribe.php(23): Process::Start('kuenstlerschrei...', Array, '114', '87.186.54.217', 'https://club.co...', 'SEO_CW_CWC_WEB...', NULL, NULL, false, false, '', 'Mozilla/5.0 (Li...', NULL, Object(stdClass), NULL, NULL, NULL, NULL)
+#3 [internal function]: api\subscribe('kuenstlerschrei...', Array, '114', '87.186.54.217', 'https://club.co...', 'SEO_CW_CWC_WEB...', NULL, NULL, false, false, '', 'Mozilla/5.0 (Li...', NULL, Object(stdClass))
+#4 /var/www/vhosts/nss/controller/api.php(169): ReflectionFunction-&gt;invokeArgs(Array)
+#5 /var/www/vhosts/nss/web/index.php(58): require('/var/www/vhosts...')
+#6 {main}</pre>
+			</div><br />
+
+			<b>Global Variables Dump:</b>&nbsp;&nbsp;
+			<a href="javascript:ToggleHidden('VariableDump')">Show/Hide</a>
+			<br /><br />
+			<div id="VariableDump" class="code" style="Display: none;">
+<pre>  <a href="javascript:RenderPage()" title=""></a>
+  <a href="javascript:RenderPage(Request)" title="object(stdClass)#20 (2) {
+  [&quot;Method&quot;]=&gt;
+  string(9) &quot;Subscribe&quot;
+  [&quot;Parameters&quot;]=&gt;
+  array(14) {
+    [0]=&gt;
+    string(28) &quot;kuenstlerschreiner@gmail.com&quot;
+    [1]=&gt;
+    array(2) {
+      [0]=&gt;
+      string(3) &quot;CWC&quot;
+      [1]=&gt;
+      string(2) &quot;OS&quot;
+    }
+    [2]=&gt;
+    string(3) &quot;114&quot;
+    [3]=&gt;
+    string(13) &quot;87.186.54.217&quot;
+    [4]=&gt;
+    string(123) &quot;https://club.computerwissen.de/index.php?option=com_users&amp;task=registration.activate&amp;token=d5us4JZe87ncNgMPlSE2IFjxOrqGfByv&quot;
+    [5]=&gt;
+    string(38) &quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;
+    [6]=&gt;
+    NULL
+    [7]=&gt;
+    NULL
+    [8]=&gt;
+    bool(false)
+    [9]=&gt;
+    bool(false)
+    [10]=&gt;
+    string(0) &quot;&quot;
+    [11]=&gt;
+    string(121) &quot;Mozilla/5.0 (Linux; Android 9; Lenovo TB-X605L) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36&quot;
+    [12]=&gt;
+    NULL
+    [13]=&gt;
+    object(stdClass)#21 (7) {
+      [&quot;attributeKey[0]&quot;]=&gt;
+      string(10) &quot;FIRST_NAME&quot;
+      [&quot;attributeValue[0]&quot;]=&gt;
+      string(7) &quot;Steffen&quot;
+      [&quot;attributeKey[1]&quot;]=&gt;
+      string(9) &quot;LAST_NAME&quot;
+      [&quot;attributeValue[1]&quot;]=&gt;
+      string(9) &quot;Schreiner&quot;
+      [&quot;attributeKey[2]&quot;]=&gt;
+      string(6) &quot;ANREDE&quot;
+      [&quot;attributeValue[2]&quot;]=&gt;
+      string(1) &quot;0&quot;
+      [&quot;immediateConfirmation&quot;]=&gt;
+      string(32) &quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;
+    }
+  }
+}
+">Request</a>
+  <a href="javascript:RenderPage(_COOKIE)" title="array(0) {
+}
+">_COOKIE</a>
+  <a href="javascript:RenderPage(_FILES)" title="array(0) {
+}
+">_FILES</a>
+  <a href="javascript:RenderPage(_GET)" title="array(0) {
+}
+">_GET</a>
+  <a href="javascript:RenderPage(_POST)" title="array(3) {
+  [&quot;{&quot;Method&quot;:&quot;Subscribe&quot;,&quot;Parameters&quot;:&quot;]=&gt;
+  array(1) {
+    [&quot;&quot;kuenstlerschreiner@gmail.com&quot;,[&quot;CWC&quot;,&quot;OS&quot;&quot;]=&gt;
+    string(9) &quot;com_users&quot;
+  }
+  [&quot;task&quot;]=&gt;
+  string(21) &quot;registration.activate&quot;
+  [&quot;token&quot;]=&gt;
+  string(469) &quot;d5us4JZe87ncNgMPlSE2IFjxOrqGfByv&quot;,&quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;,null,null,false,false,&quot;&quot;,&quot;Mozilla\/5.0 (Linux; Android 9; Lenovo TB-X605L) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/86.0.4240.198 Safari\/537.36&quot;,null,{&quot;attributeKey[0]&quot;:&quot;FIRST_NAME&quot;,&quot;attributeValue[0]&quot;:&quot;Steffen&quot;,&quot;attributeKey[1]&quot;:&quot;LAST_NAME&quot;,&quot;attributeValue[1]&quot;:&quot;Schreiner&quot;,&quot;attributeKey[2]&quot;:&quot;ANREDE&quot;,&quot;attributeValue[2]&quot;:&quot;0&quot;,&quot;immediateConfirmation&quot;:&quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;}]}&quot;
+}
+">_POST</a>
+  <a href="javascript:RenderPage(_SERVER)" title="array(33) {
+  [&quot;REDIRECT_HTTPS&quot;]=&gt;
+  string(2) &quot;on&quot;
+  [&quot;REDIRECT_SSL_TLS_SNI&quot;]=&gt;
+  string(21) &quot;nss-computerwissen.de&quot;
+  [&quot;REDIRECT_STATUS&quot;]=&gt;
+  string(3) &quot;200&quot;
+  [&quot;HTTPS&quot;]=&gt;
+  string(2) &quot;on&quot;
+  [&quot;SSL_TLS_SNI&quot;]=&gt;
+  string(21) &quot;nss-computerwissen.de&quot;
+  [&quot;HTTP_HOST&quot;]=&gt;
+  string(21) &quot;nss-computerwissen.de&quot;
+  [&quot;HTTP_ACCEPT&quot;]=&gt;
+  string(3) &quot;*/*&quot;
+  [&quot;CONTENT_LENGTH&quot;]=&gt;
+  string(3) &quot;666&quot;
+  [&quot;CONTENT_TYPE&quot;]=&gt;
+  string(33) &quot;application/x-www-form-urlencoded&quot;
+  [&quot;PATH&quot;]=&gt;
+  string(60) &quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;
+  [&quot;SERVER_SIGNATURE&quot;]=&gt;
+  string(83) &quot;&lt;address&gt;Apache/2.4.25 (Debian) Server at nss-computerwissen.de Port 443&lt;/address&gt;
+&quot;
+  [&quot;SERVER_SOFTWARE&quot;]=&gt;
+  string(22) &quot;Apache/2.4.25 (Debian)&quot;
+  [&quot;SERVER_NAME&quot;]=&gt;
+  string(21) &quot;nss-computerwissen.de&quot;
+  [&quot;SERVER_ADDR&quot;]=&gt;
+  string(14) &quot;141.101.36.215&quot;
+  [&quot;SERVER_PORT&quot;]=&gt;
+  string(3) &quot;443&quot;
+  [&quot;REMOTE_ADDR&quot;]=&gt;
+  string(14) &quot;134.119.43.130&quot;
+  [&quot;DOCUMENT_ROOT&quot;]=&gt;
+  string(23) &quot;/var/www/vhosts/nss/web&quot;
+  [&quot;REQUEST_SCHEME&quot;]=&gt;
+  string(5) &quot;https&quot;
+  [&quot;CONTEXT_PREFIX&quot;]=&gt;
+  string(0) &quot;&quot;
+  [&quot;CONTEXT_DOCUMENT_ROOT&quot;]=&gt;
+  string(23) &quot;/var/www/vhosts/nss/web&quot;
+  [&quot;SERVER_ADMIN&quot;]=&gt;
+  string(27) &quot;dennis.grote@muahsystems.de&quot;
+  [&quot;SCRIPT_FILENAME&quot;]=&gt;
+  string(33) &quot;/var/www/vhosts/nss/web/index.php&quot;
+  [&quot;REMOTE_PORT&quot;]=&gt;
+  string(5) &quot;57622&quot;
+  [&quot;REDIRECT_URL&quot;]=&gt;
+  string(4) &quot;/api&quot;
+  [&quot;GATEWAY_INTERFACE&quot;]=&gt;
+  string(7) &quot;CGI/1.1&quot;
+  [&quot;SERVER_PROTOCOL&quot;]=&gt;
+  string(8) &quot;HTTP/1.1&quot;
+  [&quot;REQUEST_METHOD&quot;]=&gt;
+  string(4) &quot;POST&quot;
+  [&quot;QUERY_STRING&quot;]=&gt;
+  string(0) &quot;&quot;
+  [&quot;REQUEST_URI&quot;]=&gt;
+  string(4) &quot;/api&quot;
+  [&quot;SCRIPT_NAME&quot;]=&gt;
+  string(10) &quot;/index.php&quot;
+  [&quot;PHP_SELF&quot;]=&gt;
+  string(10) &quot;/index.php&quot;
+  [&quot;REQUEST_TIME_FLOAT&quot;]=&gt;
+  float(1606142545,522)
+  [&quot;REQUEST_TIME&quot;]=&gt;
+  int(1606142545)
+}
+">_SERVER</a>
+  <a href="javascript:RenderPage(_SESSION)" title="array (
+)">_SESSION</a>
+  <a href="javascript:RenderPage(cache_enabled)" title="bool(true)
+">cache_enabled</a>
+  <a href="javascript:RenderPage(cached_response)" title="bool(false)
+">cached_response</a>
+  <a href="javascript:RenderPage(doc_comment)" title="string(491) &quot;/**
+ * @param string $EmailAddress
+ * @param string[]|string $NewsletterAbbreviations
+ * @param string $OptInProcessId
+ * @param string $CustomerRemoteAddress
+ * @param string $CallingService
+ * @param string|null $Affiliate
+ * @param string|null $VisitorId
+ * @param string|null $SessionId
+ * @param bool $TraderFox
+ * @param bool $Bullvestor
+ * @param string $Coreg
+ * @param string $strUserAgent
+ * @param string $strAdref
+ * @param \stdClass $stdAdditionalProperties
+ * @return array
+ */&quot;
+">doc_comment</a>
+  <a href="javascript:RenderPage(function_name)" title="string(13) &quot;api\subscribe&quot;
+">function_name</a>
+  <a href="javascript:RenderPage(language)" title="string(5) &quot;de_DE&quot;
+">language</a>
+  <a href="javascript:RenderPage(matches)" title="array(0) {
+}
+">matches</a>
+  <a href="javascript:RenderPage(output)" title="string(4) &quot;json&quot;
+">output</a>
+  <a href="javascript:RenderPage(raw_request)" title="string(666) &quot;{&quot;Method&quot;:&quot;Subscribe&quot;,&quot;Parameters&quot;:[&quot;kuenstlerschreiner@gmail.com&quot;,[&quot;CWC&quot;,&quot;OS&quot;],&quot;114&quot;,&quot;87.186.54.217&quot;,&quot;https:\/\/club.computerwissen.de\/index.php?option=com_users&amp;task=registration.activate&amp;token=d5us4JZe87ncNgMPlSE2IFjxOrqGfByv&quot;,&quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;,null,null,false,false,&quot;&quot;,&quot;Mozilla\/5.0 (Linux; Android 9; Lenovo TB-X605L) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/86.0.4240.198 Safari\/537.36&quot;,null,{&quot;attributeKey[0]&quot;:&quot;FIRST_NAME&quot;,&quot;attributeValue[0]&quot;:&quot;Steffen&quot;,&quot;attributeKey[1]&quot;:&quot;LAST_NAME&quot;,&quot;attributeValue[1]&quot;:&quot;Schreiner&quot;,&quot;attributeKey[2]&quot;:&quot;ANREDE&quot;,&quot;attributeValue[2]&quot;:&quot;0&quot;,&quot;immediateConfirmation&quot;:&quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;}]}&quot;
+">raw_request</a>
+  <a href="javascript:RenderPage(redis)" title="object(Naytec\Redis)#23 (1) {
+  [&quot;socket&quot;]=&gt;
+  resource(11) of type (Redis Socket Buffer)
+}
+">redis</a>
+  <a href="javascript:RenderPage(reflection_function)" title="object(ReflectionFunction)#19 (1) {
+  [&quot;name&quot;]=&gt;
+  string(13) &quot;api\subscribe&quot;
+}
+">reflection_function</a>
+  <a href="javascript:RenderPage(request)" title="object(stdClass)#20 (2) {
+  [&quot;Method&quot;]=&gt;
+  string(9) &quot;Subscribe&quot;
+  [&quot;Parameters&quot;]=&gt;
+  array(14) {
+    [0]=&gt;
+    string(28) &quot;kuenstlerschreiner@gmail.com&quot;
+    [1]=&gt;
+    array(2) {
+      [0]=&gt;
+      string(3) &quot;CWC&quot;
+      [1]=&gt;
+      string(2) &quot;OS&quot;
+    }
+    [2]=&gt;
+    string(3) &quot;114&quot;
+    [3]=&gt;
+    string(13) &quot;87.186.54.217&quot;
+    [4]=&gt;
+    string(123) &quot;https://club.computerwissen.de/index.php?option=com_users&amp;task=registration.activate&amp;token=d5us4JZe87ncNgMPlSE2IFjxOrqGfByv&quot;
+    [5]=&gt;
+    string(38) &quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;
+    [6]=&gt;
+    NULL
+    [7]=&gt;
+    NULL
+    [8]=&gt;
+    bool(false)
+    [9]=&gt;
+    bool(false)
+    [10]=&gt;
+    string(0) &quot;&quot;
+    [11]=&gt;
+    string(121) &quot;Mozilla/5.0 (Linux; Android 9; Lenovo TB-X605L) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36&quot;
+    [12]=&gt;
+    NULL
+    [13]=&gt;
+    object(stdClass)#21 (7) {
+      [&quot;attributeKey[0]&quot;]=&gt;
+      string(10) &quot;FIRST_NAME&quot;
+      [&quot;attributeValue[0]&quot;]=&gt;
+      string(7) &quot;Steffen&quot;
+      [&quot;attributeKey[1]&quot;]=&gt;
+      string(9) &quot;LAST_NAME&quot;
+      [&quot;attributeValue[1]&quot;]=&gt;
+      string(9) &quot;Schreiner&quot;
+      [&quot;attributeKey[2]&quot;]=&gt;
+      string(6) &quot;ANREDE&quot;
+      [&quot;attributeValue[2]&quot;]=&gt;
+      string(1) &quot;0&quot;
+      [&quot;immediateConfirmation&quot;]=&gt;
+      string(32) &quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;
+    }
+  }
+}
+">request</a>
+  <a href="javascript:RenderPage(request_key_prefix)" title="string(43) &quot;Subscribe(0010a02bf90c9c0ef2b3625e6e71e6c3)&quot;
+">request_key_prefix</a>
+  <a href="javascript:RenderPage(response)" title="array(2) {
+  [&quot;result&quot;]=&gt;
+  NULL
+  [&quot;errors&quot;]=&gt;
+  array(0) {
+  }
+}
+">response</a>
+  <a href="javascript:RenderPage(strController)" title="string(3) &quot;api&quot;
+">strController</a>
+  <a href="javascript:RenderPage(strModuleDirectory)" title="string(11) &quot;translation&quot;
+">strModuleDirectory</a>
+  <a href="javascript:RenderPage(strUriArguments)" title="string(0) &quot;&quot;
+">strUriArguments</a>
+</pre><script type="text/javascript">   = "<pre></pre>";
+  Request = "<pre>object(stdClass)#20 (2) {\n  [&quot;Method&quot;]=&gt;\n  string(9) &quot;Subscribe&quot;\n  [&quot;Parameters&quot;]=&gt;\n  array(14) {\n    [0]=&gt;\n    string(28) &quot;kuenstlerschreiner@gmail.com&quot;\n    [1]=&gt;\n    array(2) {\n      [0]=&gt;\n      string(3) &quot;CWC&quot;\n      [1]=&gt;\n      string(2) &quot;OS&quot;\n    }\n    [2]=&gt;\n    string(3) &quot;114&quot;\n    [3]=&gt;\n    string(13) &quot;87.186.54.217&quot;\n    [4]=&gt;\n    string(123) &quot;https://club.computerwissen.de/index.php?option=com_users&amp;task=registration.activate&amp;token=d5us4JZe87ncNgMPlSE2IFjxOrqGfByv&quot;\n    [5]=&gt;\n    string(38) &quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;\n    [6]=&gt;\n    NULL\n    [7]=&gt;\n    NULL\n    [8]=&gt;\n    bool(false)\n    [9]=&gt;\n    bool(false)\n    [10]=&gt;\n    string(0) &quot;&quot;\n    [11]=&gt;\n    string(121) &quot;Mozilla/5.0 (Linux; Android 9; Lenovo TB-X605L) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36&quot;\n    [12]=&gt;\n    NULL\n    [13]=&gt;\n    object(stdClass)#21 (7) {\n      [&quot;attributeKey[0]&quot;]=&gt;\n      string(10) &quot;FIRST_NAME&quot;\n      [&quot;attributeValue[0]&quot;]=&gt;\n      string(7) &quot;Steffen&quot;\n      [&quot;attributeKey[1]&quot;]=&gt;\n      string(9) &quot;LAST_NAME&quot;\n      [&quot;attributeValue[1]&quot;]=&gt;\n      string(9) &quot;Schreiner&quot;\n      [&quot;attributeKey[2]&quot;]=&gt;\n      string(6) &quot;ANREDE&quot;\n      [&quot;attributeValue[2]&quot;]=&gt;\n      string(1) &quot;0&quot;\n      [&quot;immediateConfirmation&quot;]=&gt;\n      string(32) &quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;\n    }\n  }\n}\n</pre>";
+  _COOKIE = "<pre>array(0) {\n}\n</pre>";
+  _FILES = "<pre>array(0) {\n}\n</pre>";
+  _GET = "<pre>array(0) {\n}\n</pre>";
+  _POST = "<pre>array(3) {\n  [&quot;{&quot;Method&quot;:&quot;Subscribe&quot;,&quot;Parameters&quot;:&quot;]=&gt;\n  array(1) {\n    [&quot;&quot;kuenstlerschreiner@gmail.com&quot;,[&quot;CWC&quot;,&quot;OS&quot;&quot;]=&gt;\n    string(9) &quot;com_users&quot;\n  }\n  [&quot;task&quot;]=&gt;\n  string(21) &quot;registration.activate&quot;\n  [&quot;token&quot;]=&gt;\n  string(469) &quot;d5us4JZe87ncNgMPlSE2IFjxOrqGfByv&quot;,&quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;,null,null,false,false,&quot;&quot;,&quot;Mozilla\\/5.0 (Linux; Android 9; Lenovo TB-X605L) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/86.0.4240.198 Safari\\/537.36&quot;,null,{&quot;attributeKey[0]&quot;:&quot;FIRST_NAME&quot;,&quot;attributeValue[0]&quot;:&quot;Steffen&quot;,&quot;attributeKey[1]&quot;:&quot;LAST_NAME&quot;,&quot;attributeValue[1]&quot;:&quot;Schreiner&quot;,&quot;attributeKey[2]&quot;:&quot;ANREDE&quot;,&quot;attributeValue[2]&quot;:&quot;0&quot;,&quot;immediateConfirmation&quot;:&quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;}]}&quot;\n}\n</pre>";
+  _SERVER = "<pre>array(33) {\n  [&quot;REDIRECT_HTTPS&quot;]=&gt;\n  string(2) &quot;on&quot;\n  [&quot;REDIRECT_SSL_TLS_SNI&quot;]=&gt;\n  string(21) &quot;nss-computerwissen.de&quot;\n  [&quot;REDIRECT_STATUS&quot;]=&gt;\n  string(3) &quot;200&quot;\n  [&quot;HTTPS&quot;]=&gt;\n  string(2) &quot;on&quot;\n  [&quot;SSL_TLS_SNI&quot;]=&gt;\n  string(21) &quot;nss-computerwissen.de&quot;\n  [&quot;HTTP_HOST&quot;]=&gt;\n  string(21) &quot;nss-computerwissen.de&quot;\n  [&quot;HTTP_ACCEPT&quot;]=&gt;\n  string(3) &quot;*/*&quot;\n  [&quot;CONTENT_LENGTH&quot;]=&gt;\n  string(3) &quot;666&quot;\n  [&quot;CONTENT_TYPE&quot;]=&gt;\n  string(33) &quot;application/x-www-form-urlencoded&quot;\n  [&quot;PATH&quot;]=&gt;\n  string(60) &quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;\n  [&quot;SERVER_SIGNATURE&quot;]=&gt;\n  string(83) &quot;&lt;address&gt;Apache/2.4.25 (Debian) Server at nss-computerwissen.de Port 443&lt;/address&gt;\n&quot;\n  [&quot;SERVER_SOFTWARE&quot;]=&gt;\n  string(22) &quot;Apache/2.4.25 (Debian)&quot;\n  [&quot;SERVER_NAME&quot;]=&gt;\n  string(21) &quot;nss-computerwissen.de&quot;\n  [&quot;SERVER_ADDR&quot;]=&gt;\n  string(14) &quot;141.101.36.215&quot;\n  [&quot;SERVER_PORT&quot;]=&gt;\n  string(3) &quot;443&quot;\n  [&quot;REMOTE_ADDR&quot;]=&gt;\n  string(14) &quot;134.119.43.130&quot;\n  [&quot;DOCUMENT_ROOT&quot;]=&gt;\n  string(23) &quot;/var/www/vhosts/nss/web&quot;\n  [&quot;REQUEST_SCHEME&quot;]=&gt;\n  string(5) &quot;https&quot;\n  [&quot;CONTEXT_PREFIX&quot;]=&gt;\n  string(0) &quot;&quot;\n  [&quot;CONTEXT_DOCUMENT_ROOT&quot;]=&gt;\n  string(23) &quot;/var/www/vhosts/nss/web&quot;\n  [&quot;SERVER_ADMIN&quot;]=&gt;\n  string(27) &quot;dennis.grote@muahsystems.de&quot;\n  [&quot;SCRIPT_FILENAME&quot;]=&gt;\n  string(33) &quot;/var/www/vhosts/nss/web/index.php&quot;\n  [&quot;REMOTE_PORT&quot;]=&gt;\n  string(5) &quot;57622&quot;\n  [&quot;REDIRECT_URL&quot;]=&gt;\n  string(4) &quot;/api&quot;\n  [&quot;GATEWAY_INTERFACE&quot;]=&gt;\n  string(7) &quot;CGI/1.1&quot;\n  [&quot;SERVER_PROTOCOL&quot;]=&gt;\n  string(8) &quot;HTTP/1.1&quot;\n  [&quot;REQUEST_METHOD&quot;]=&gt;\n  string(4) &quot;POST&quot;\n  [&quot;QUERY_STRING&quot;]=&gt;\n  string(0) &quot;&quot;\n  [&quot;REQUEST_URI&quot;]=&gt;\n  string(4) &quot;/api&quot;\n  [&quot;SCRIPT_NAME&quot;]=&gt;\n  string(10) &quot;/index.php&quot;\n  [&quot;PHP_SELF&quot;]=&gt;\n  string(10) &quot;/index.php&quot;\n  [&quot;REQUEST_TIME_FLOAT&quot;]=&gt;\n  float(1606142545,522)\n  [&quot;REQUEST_TIME&quot;]=&gt;\n  int(1606142545)\n}\n</pre>";
+  _SESSION = "<pre>array (\n)</pre>";
+  cache_enabled = "<pre>bool(true)\n</pre>";
+  cached_response = "<pre>bool(false)\n</pre>";
+  doc_comment = "<pre>string(491) &quot;/**\n * @param string $EmailAddress\n * @param string[]|string $NewsletterAbbreviations\n * @param string $OptInProcessId\n * @param string $CustomerRemoteAddress\n * @param string $CallingService\n * @param string|null $Affiliate\n * @param string|null $VisitorId\n * @param string|null $SessionId\n * @param bool $TraderFox\n * @param bool $Bullvestor\n * @param string $Coreg\n * @param string $strUserAgent\n * @param string $strAdref\n * @param \\stdClass $stdAdditionalProperties\n * @return array\n */&quot;\n</pre>";
+  function_name = "<pre>string(13) &quot;api\\subscribe&quot;\n</pre>";
+  language = "<pre>string(5) &quot;de_DE&quot;\n</pre>";
+  matches = "<pre>array(0) {\n}\n</pre>";
+  output = "<pre>string(4) &quot;json&quot;\n</pre>";
+  raw_request = "<pre>string(666) &quot;{&quot;Method&quot;:&quot;Subscribe&quot;,&quot;Parameters&quot;:[&quot;kuenstlerschreiner@gmail.com&quot;,[&quot;CWC&quot;,&quot;OS&quot;],&quot;114&quot;,&quot;87.186.54.217&quot;,&quot;https:\\/\\/club.computerwissen.de\\/index.php?option=com_users&amp;task=registration.activate&amp;token=d5us4JZe87ncNgMPlSE2IFjxOrqGfByv&quot;,&quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;,null,null,false,false,&quot;&quot;,&quot;Mozilla\\/5.0 (Linux; Android 9; Lenovo TB-X605L) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/86.0.4240.198 Safari\\/537.36&quot;,null,{&quot;attributeKey[0]&quot;:&quot;FIRST_NAME&quot;,&quot;attributeValue[0]&quot;:&quot;Steffen&quot;,&quot;attributeKey[1]&quot;:&quot;LAST_NAME&quot;,&quot;attributeValue[1]&quot;:&quot;Schreiner&quot;,&quot;attributeKey[2]&quot;:&quot;ANREDE&quot;,&quot;attributeValue[2]&quot;:&quot;0&quot;,&quot;immediateConfirmation&quot;:&quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;}]}&quot;\n</pre>";
+  redis = "<pre>object(Naytec\\Redis)#23 (1) {\n  [&quot;socket&quot;]=&gt;\n  resource(11) of type (Redis Socket Buffer)\n}\n</pre>";
+  reflection_function = "<pre>object(ReflectionFunction)#19 (1) {\n  [&quot;name&quot;]=&gt;\n  string(13) &quot;api\\subscribe&quot;\n}\n</pre>";
+  request = "<pre>object(stdClass)#20 (2) {\n  [&quot;Method&quot;]=&gt;\n  string(9) &quot;Subscribe&quot;\n  [&quot;Parameters&quot;]=&gt;\n  array(14) {\n    [0]=&gt;\n    string(28) &quot;kuenstlerschreiner@gmail.com&quot;\n    [1]=&gt;\n    array(2) {\n      [0]=&gt;\n      string(3) &quot;CWC&quot;\n      [1]=&gt;\n      string(2) &quot;OS&quot;\n    }\n    [2]=&gt;\n    string(3) &quot;114&quot;\n    [3]=&gt;\n    string(13) &quot;87.186.54.217&quot;\n    [4]=&gt;\n    string(123) &quot;https://club.computerwissen.de/index.php?option=com_users&amp;task=registration.activate&amp;token=d5us4JZe87ncNgMPlSE2IFjxOrqGfByv&quot;\n    [5]=&gt;\n    string(38) &quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;\n    [6]=&gt;\n    NULL\n    [7]=&gt;\n    NULL\n    [8]=&gt;\n    bool(false)\n    [9]=&gt;\n    bool(false)\n    [10]=&gt;\n    string(0) &quot;&quot;\n    [11]=&gt;\n    string(121) &quot;Mozilla/5.0 (Linux; Android 9; Lenovo TB-X605L) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36&quot;\n    [12]=&gt;\n    NULL\n    [13]=&gt;\n    object(stdClass)#21 (7) {\n      [&quot;attributeKey[0]&quot;]=&gt;\n      string(10) &quot;FIRST_NAME&quot;\n      [&quot;attributeValue[0]&quot;]=&gt;\n      string(7) &quot;Steffen&quot;\n      [&quot;attributeKey[1]&quot;]=&gt;\n      string(9) &quot;LAST_NAME&quot;\n      [&quot;attributeValue[1]&quot;]=&gt;\n      string(9) &quot;Schreiner&quot;\n      [&quot;attributeKey[2]&quot;]=&gt;\n      string(6) &quot;ANREDE&quot;\n      [&quot;attributeValue[2]&quot;]=&gt;\n      string(1) &quot;0&quot;\n      [&quot;immediateConfirmation&quot;]=&gt;\n      string(32) &quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;\n    }\n  }\n}\n</pre>";
+  request_key_prefix = "<pre>string(43) &quot;Subscribe(0010a02bf90c9c0ef2b3625e6e71e6c3)&quot;\n</pre>";
+  response = "<pre>array(2) {\n  [&quot;result&quot;]=&gt;\n  NULL\n  [&quot;errors&quot;]=&gt;\n  array(0) {\n  }\n}\n</pre>";
+  strController = "<pre>string(3) &quot;api&quot;\n</pre>";
+  strModuleDirectory = "<pre>string(11) &quot;translation&quot;\n</pre>";
+  strUriArguments = "<pre>string(0) &quot;&quot;\n</pre>";
+</script>			</div><br />
+			<hr width="100%" size="1" color="#dddddd" />
+			<center><em>
+				Exception Report Generated:&nbsp;&nbsp;Monday, November 23 2020, 3:42:49.37762800 PM CET				<br/>
+				Exception Report NOT Logged
+			</em></center>
+	</div>
+	</body>
+</html>
+
+
+======================== 2020-12-10 15:39:50 ========
+<html>
+	<head>
+		<title>PHP Exception - Call to undefined function publish_websocket_process()</title>
+		<style>
+			body { font-family: 'Arial', 'Helvetica', 'sans-serif'; font-size: 11px; }
+			a:link, a:visited { text-decoration: none; }
+			a:hover { text-decoration: underline; }
+			pre { font-family: 'Lucida Console', 'Courier New', 'Courier', 'monospaced'; font-size: 11px; line-height: 13px; }
+			.page { padding: 10px; }
+			.headingLeft { background-color: #440066; color: #ffffff; padding: 10px 0px 10px 10px; font-family: 'Verdana', 'Arial', 'Helvetica', 'sans-serif'; font-size: 18px; font-weight: bold; width: 70%; vertical-align: middle; }
+			.headingLeftSmall { font-size: 10px; }
+			.headingRight { background-color: #440066; color: #ffffff; padding: 0px 10px 10px 10px; font-family: 'Verdana', 'Arial', 'Helvetica', 'sans-serif'; font-size: 10px; width: 30%; vertical-align: middle; text-align: right; }
+			.title { font-family: 'Verdana', 'Arial', 'Helvetica', 'sans-serif'; font-size: 19px; font-style: italic; color: #330055; }
+			.code { background-color: #f4eeff; padding: 1px 10px 1px 10px; }
+		</style>
+		<script type="text/javascript">
+			function RenderPage(strHtml) { document.rendered.strHtml.value = strHtml; document.rendered.submit(); }
+			function ToggleHidden(strDiv) { var obj = document.getElementById(strDiv); var stlSection = obj.style; var isCollapsed = obj.style.display.length; if (isCollapsed) stlSection.display = ''; else stlSection.display = 'none'; }
+		</script>
+	</head>
+	<body bgcolor="white" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0"> 
+
+	<table border="0" cellspacing="0" width="100%">
+		<tr>
+			<td nowrap="nowrap" class="headingLeft"><span class="headingLeftSmall">Exception in PHP Script<br /></span>/index.php</td>
+			<td nowrap="nowrap" class="headingRight">
+				<b>PHP Version:</b> 7.0.33-0+deb9u1;&nbsp;&nbsp;<b>Zend Engine Version:</b> 3.0.0;&nbsp;&nbsp;<b>Qcodo Version:</b> 0.4.22<br />
+				<b>Application:</b> Apache/2.4.25 (Debian);&nbsp;&nbsp;<b>Server Name:</b> nss-computerwissen.de<br />
+				<b>HTTP User Agent:</b> <br />
+<b>Notice</b>:  Undefined index: HTTP_USER_AGENT in <b>/var/www/vhosts/nss/module/qcodo/includes/qcodo/_core/assets/error_dump.inc.php</b> on line <b>34</b><br />
+</td>
+		</tr>
+	</table>
+	
+	<div class="page">
+		<span class="title">Call&nbsp;to&nbsp;undefined&nbsp;function&nbsp;publish_websocket_process()</span><br />
+		<form method="post" action="/assets/php/_core/error_already_rendered_page.php" target="blank" name="rendered"><input type="hidden" name="strHtml" value=""></form>
+
+			<b>Exception Type:</b>&nbsp;&nbsp;
+			Error			<br /><br />
+
+			<b>Source File:</b>&nbsp;&nbsp;
+			/var/www/vhosts/nss/module/qcodo/includes/data_classes/Process.class.php			&nbsp;&nbsp;&nbsp;&nbsp;<b>Line:</b>&nbsp;&nbsp;
+			375			<br /><br />
+
+			<div class="code">
+<pre>Line 370:    					}
+Line 371:    					$Process-&gt;Adref = $strAdref;
+Line 372:    					$Process-&gt;SplitTestId = $intSplitTestId;
+Line 373:    					$Process-&gt;UserProcessingTime = $userProcessingTime != null ? intval($userProcessingTime) : null;
+Line 374:    					$Process-&gt;Save();
+<span style="color: #f00;">Line 375:    					publish_websocket_process(&quot;process/created&quot;, $Process);
+</span>Line 376:    					SpamProtection::monitor($Process);
+Line 377:    					SpamProtection::increaseSoiCounter($EmailAddress, $CustomerRemoteAddress);
+Line 378:    
+Line 379:    					if (!is_null($InternalOptInProcess) &amp;&amp; mt_rand(0,9) === 9) {
+Line 380:    						$InternalOptInProcess-&gt;LastUsed = QDateTime::Now();
+</pre>			</div><br />
+			
+
+			<b>Call Stack:</b>
+			<br><br>
+			<div class="code">
+				<pre>#0 /var/www/vhosts/nss/function_library/api/subscribe.php(23): Process::Start('Phoenix-immob@t...', Array, '114', '93.201.102.98', 'https://club.co...', 'SEO_CW_CWC_WEB...', NULL, NULL, false, false, '', 'Mozilla/5.0 (iP...', NULL, Object(stdClass), NULL, NULL, NULL, NULL)
+#1 [internal function]: api\subscribe('Phoenix-immob@t...', Array, '114', '93.201.102.98', 'https://club.co...', 'SEO_CW_CWC_WEB...', NULL, NULL, false, false, '', 'Mozilla/5.0 (iP...', NULL, Object(stdClass))
+#2 /var/www/vhosts/nss/controller/api.php(160): ReflectionFunction-&gt;invokeArgs(Array)
+#3 /var/www/vhosts/nss/web/index.php(66): require('/var/www/vhosts...')
+#4 {main}</pre>
+			</div><br />
+
+			<b>Global Variables Dump:</b>&nbsp;&nbsp;
+			<a href="javascript:ToggleHidden('VariableDump')">Show/Hide</a>
+			<br /><br />
+			<div id="VariableDump" class="code" style="Display: none;">
+<pre>  <a href="javascript:RenderPage()" title=""></a>
+  <a href="javascript:RenderPage(Request)" title="object(stdClass)#20 (2) {
+  [&quot;Method&quot;]=&gt;
+  string(9) &quot;Subscribe&quot;
+  [&quot;Parameters&quot;]=&gt;
+  array(14) {
+    [0]=&gt;
+    string(25) &quot;Phoenix-immob@t-online.de&quot;
+    [1]=&gt;
+    array(5) {
+      [0]=&gt;
+      string(3) &quot;CWC&quot;
+      [1]=&gt;
+      string(2) &quot;WS&quot;
+      [2]=&gt;
+      string(2) &quot;BK&quot;
+      [3]=&gt;
+      string(2) &quot;DL&quot;
+      [4]=&gt;
+      string(2) &quot;OP&quot;
+    }
+    [2]=&gt;
+    string(3) &quot;114&quot;
+    [3]=&gt;
+    string(13) &quot;93.201.102.98&quot;
+    [4]=&gt;
+    string(123) &quot;https://club.computerwissen.de/index.php?option=com_users&amp;task=registration.activate&amp;token=Hmt5xEkF8Yi6qeUplbf1LGVnaRBJAzu0&quot;
+    [5]=&gt;
+    string(38) &quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;
+    [6]=&gt;
+    NULL
+    [7]=&gt;
+    NULL
+    [8]=&gt;
+    bool(false)
+    [9]=&gt;
+    bool(false)
+    [10]=&gt;
+    string(0) &quot;&quot;
+    [11]=&gt;
+    string(137) &quot;Mozilla/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.1 Mobile/15E148 Safari/604.1&quot;
+    [12]=&gt;
+    NULL
+    [13]=&gt;
+    object(stdClass)#21 (7) {
+      [&quot;attributeKey[0]&quot;]=&gt;
+      string(10) &quot;FIRST_NAME&quot;
+      [&quot;attributeValue[0]&quot;]=&gt;
+      string(5) &quot;Peter&quot;
+      [&quot;attributeKey[1]&quot;]=&gt;
+      string(9) &quot;LAST_NAME&quot;
+      [&quot;attributeValue[1]&quot;]=&gt;
+      string(12) &quot;Meisenheimer&quot;
+      [&quot;attributeKey[2]&quot;]=&gt;
+      string(6) &quot;ANREDE&quot;
+      [&quot;attributeValue[2]&quot;]=&gt;
+      string(1) &quot;0&quot;
+      [&quot;immediateConfirmation&quot;]=&gt;
+      string(32) &quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;
+    }
+  }
+}
+">Request</a>
+  <a href="javascript:RenderPage(_COOKIE)" title="array(0) {
+}
+">_COOKIE</a>
+  <a href="javascript:RenderPage(_FILES)" title="array(0) {
+}
+">_FILES</a>
+  <a href="javascript:RenderPage(_GET)" title="array(0) {
+}
+">_GET</a>
+  <a href="javascript:RenderPage(_POST)" title="array(3) {
+  [&quot;{&quot;Method&quot;:&quot;Subscribe&quot;,&quot;Parameters&quot;:&quot;]=&gt;
+  array(1) {
+    [&quot;&quot;Phoenix-immob@t-online.de&quot;,[&quot;CWC&quot;,&quot;WS&quot;,&quot;BK&quot;,&quot;DL&quot;,&quot;OP&quot;&quot;]=&gt;
+    string(9) &quot;com_users&quot;
+  }
+  [&quot;task&quot;]=&gt;
+  string(21) &quot;registration.activate&quot;
+  [&quot;token&quot;]=&gt;
+  string(487) &quot;Hmt5xEkF8Yi6qeUplbf1LGVnaRBJAzu0&quot;,&quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;,null,null,false,false,&quot;&quot;,&quot;Mozilla\/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit\/605.1.15 (KHTML, like Gecko) Version\/14.0.1 Mobile\/15E148 Safari\/604.1&quot;,null,{&quot;attributeKey[0]&quot;:&quot;FIRST_NAME&quot;,&quot;attributeValue[0]&quot;:&quot;Peter&quot;,&quot;attributeKey[1]&quot;:&quot;LAST_NAME&quot;,&quot;attributeValue[1]&quot;:&quot;Meisenheimer&quot;,&quot;attributeKey[2]&quot;:&quot;ANREDE&quot;,&quot;attributeValue[2]&quot;:&quot;0&quot;,&quot;immediateConfirmation&quot;:&quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;}]}&quot;
+}
+">_POST</a>
+  <a href="javascript:RenderPage(_SERVER)" title="array(33) {
+  [&quot;REDIRECT_HTTPS&quot;]=&gt;
+  string(2) &quot;on&quot;
+  [&quot;REDIRECT_SSL_TLS_SNI&quot;]=&gt;
+  string(21) &quot;nss-computerwissen.de&quot;
+  [&quot;REDIRECT_STATUS&quot;]=&gt;
+  string(3) &quot;200&quot;
+  [&quot;HTTPS&quot;]=&gt;
+  string(2) &quot;on&quot;
+  [&quot;SSL_TLS_SNI&quot;]=&gt;
+  string(21) &quot;nss-computerwissen.de&quot;
+  [&quot;HTTP_HOST&quot;]=&gt;
+  string(21) &quot;nss-computerwissen.de&quot;
+  [&quot;HTTP_ACCEPT&quot;]=&gt;
+  string(3) &quot;*/*&quot;
+  [&quot;CONTENT_LENGTH&quot;]=&gt;
+  string(3) &quot;696&quot;
+  [&quot;CONTENT_TYPE&quot;]=&gt;
+  string(33) &quot;application/x-www-form-urlencoded&quot;
+  [&quot;PATH&quot;]=&gt;
+  string(60) &quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;
+  [&quot;SERVER_SIGNATURE&quot;]=&gt;
+  string(83) &quot;&lt;address&gt;Apache/2.4.25 (Debian) Server at nss-computerwissen.de Port 443&lt;/address&gt;
+&quot;
+  [&quot;SERVER_SOFTWARE&quot;]=&gt;
+  string(22) &quot;Apache/2.4.25 (Debian)&quot;
+  [&quot;SERVER_NAME&quot;]=&gt;
+  string(21) &quot;nss-computerwissen.de&quot;
+  [&quot;SERVER_ADDR&quot;]=&gt;
+  string(14) &quot;141.101.36.215&quot;
+  [&quot;SERVER_PORT&quot;]=&gt;
+  string(3) &quot;443&quot;
+  [&quot;REMOTE_ADDR&quot;]=&gt;
+  string(14) &quot;134.119.43.130&quot;
+  [&quot;DOCUMENT_ROOT&quot;]=&gt;
+  string(23) &quot;/var/www/vhosts/nss/web&quot;
+  [&quot;REQUEST_SCHEME&quot;]=&gt;
+  string(5) &quot;https&quot;
+  [&quot;CONTEXT_PREFIX&quot;]=&gt;
+  string(0) &quot;&quot;
+  [&quot;CONTEXT_DOCUMENT_ROOT&quot;]=&gt;
+  string(23) &quot;/var/www/vhosts/nss/web&quot;
+  [&quot;SERVER_ADMIN&quot;]=&gt;
+  string(27) &quot;dennis.grote@muahsystems.de&quot;
+  [&quot;SCRIPT_FILENAME&quot;]=&gt;
+  string(33) &quot;/var/www/vhosts/nss/web/index.php&quot;
+  [&quot;REMOTE_PORT&quot;]=&gt;
+  string(5) &quot;58344&quot;
+  [&quot;REDIRECT_URL&quot;]=&gt;
+  string(4) &quot;/api&quot;
+  [&quot;GATEWAY_INTERFACE&quot;]=&gt;
+  string(7) &quot;CGI/1.1&quot;
+  [&quot;SERVER_PROTOCOL&quot;]=&gt;
+  string(8) &quot;HTTP/1.1&quot;
+  [&quot;REQUEST_METHOD&quot;]=&gt;
+  string(4) &quot;POST&quot;
+  [&quot;QUERY_STRING&quot;]=&gt;
+  string(0) &quot;&quot;
+  [&quot;REQUEST_URI&quot;]=&gt;
+  string(4) &quot;/api&quot;
+  [&quot;SCRIPT_NAME&quot;]=&gt;
+  string(10) &quot;/index.php&quot;
+  [&quot;PHP_SELF&quot;]=&gt;
+  string(10) &quot;/index.php&quot;
+  [&quot;REQUEST_TIME_FLOAT&quot;]=&gt;
+  float(1607611190,259)
+  [&quot;REQUEST_TIME&quot;]=&gt;
+  int(1607611190)
+}
+">_SERVER</a>
+  <a href="javascript:RenderPage(api_session_id)" title="bool(false)
+">api_session_id</a>
+  <a href="javascript:RenderPage(cache_enabled)" title="bool(true)
+">cache_enabled</a>
+  <a href="javascript:RenderPage(cached_response)" title="bool(false)
+">cached_response</a>
+  <a href="javascript:RenderPage(doc_comment)" title="string(491) &quot;/**
+ * @param string $EmailAddress
+ * @param string[]|string $NewsletterAbbreviations
+ * @param string $OptInProcessId
+ * @param string $CustomerRemoteAddress
+ * @param string $CallingService
+ * @param string|null $Affiliate
+ * @param string|null $VisitorId
+ * @param string|null $SessionId
+ * @param bool $TraderFox
+ * @param bool $Bullvestor
+ * @param string $Coreg
+ * @param string $strUserAgent
+ * @param string $strAdref
+ * @param \stdClass $stdAdditionalProperties
+ * @return array
+ */&quot;
+">doc_comment</a>
+  <a href="javascript:RenderPage(function_name)" title="string(13) &quot;api\subscribe&quot;
+">function_name</a>
+  <a href="javascript:RenderPage(language)" title="string(5) &quot;de_DE&quot;
+">language</a>
+  <a href="javascript:RenderPage(matches)" title="array(0) {
+}
+">matches</a>
+  <a href="javascript:RenderPage(output)" title="string(4) &quot;json&quot;
+">output</a>
+  <a href="javascript:RenderPage(raw_request)" title="string(696) &quot;{&quot;Method&quot;:&quot;Subscribe&quot;,&quot;Parameters&quot;:[&quot;Phoenix-immob@t-online.de&quot;,[&quot;CWC&quot;,&quot;WS&quot;,&quot;BK&quot;,&quot;DL&quot;,&quot;OP&quot;],&quot;114&quot;,&quot;93.201.102.98&quot;,&quot;https:\/\/club.computerwissen.de\/index.php?option=com_users&amp;task=registration.activate&amp;token=Hmt5xEkF8Yi6qeUplbf1LGVnaRBJAzu0&quot;,&quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;,null,null,false,false,&quot;&quot;,&quot;Mozilla\/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit\/605.1.15 (KHTML, like Gecko) Version\/14.0.1 Mobile\/15E148 Safari\/604.1&quot;,null,{&quot;attributeKey[0]&quot;:&quot;FIRST_NAME&quot;,&quot;attributeValue[0]&quot;:&quot;Peter&quot;,&quot;attributeKey[1]&quot;:&quot;LAST_NAME&quot;,&quot;attributeValue[1]&quot;:&quot;Meisenheimer&quot;,&quot;attributeKey[2]&quot;:&quot;ANREDE&quot;,&quot;attributeValue[2]&quot;:&quot;0&quot;,&quot;immediateConfirmation&quot;:&quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;}]}&quot;
+">raw_request</a>
+  <a href="javascript:RenderPage(redis)" title="object(Naytec\Redis)#23 (1) {
+  [&quot;socket&quot;]=&gt;
+  resource(12) of type (Redis Socket Buffer)
+}
+">redis</a>
+  <a href="javascript:RenderPage(reflection_function)" title="object(ReflectionFunction)#19 (1) {
+  [&quot;name&quot;]=&gt;
+  string(13) &quot;api\subscribe&quot;
+}
+">reflection_function</a>
+  <a href="javascript:RenderPage(request)" title="object(stdClass)#20 (2) {
+  [&quot;Method&quot;]=&gt;
+  string(9) &quot;Subscribe&quot;
+  [&quot;Parameters&quot;]=&gt;
+  array(14) {
+    [0]=&gt;
+    string(25) &quot;Phoenix-immob@t-online.de&quot;
+    [1]=&gt;
+    array(5) {
+      [0]=&gt;
+      string(3) &quot;CWC&quot;
+      [1]=&gt;
+      string(2) &quot;WS&quot;
+      [2]=&gt;
+      string(2) &quot;BK&quot;
+      [3]=&gt;
+      string(2) &quot;DL&quot;
+      [4]=&gt;
+      string(2) &quot;OP&quot;
+    }
+    [2]=&gt;
+    string(3) &quot;114&quot;
+    [3]=&gt;
+    string(13) &quot;93.201.102.98&quot;
+    [4]=&gt;
+    string(123) &quot;https://club.computerwissen.de/index.php?option=com_users&amp;task=registration.activate&amp;token=Hmt5xEkF8Yi6qeUplbf1LGVnaRBJAzu0&quot;
+    [5]=&gt;
+    string(38) &quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;
+    [6]=&gt;
+    NULL
+    [7]=&gt;
+    NULL
+    [8]=&gt;
+    bool(false)
+    [9]=&gt;
+    bool(false)
+    [10]=&gt;
+    string(0) &quot;&quot;
+    [11]=&gt;
+    string(137) &quot;Mozilla/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.1 Mobile/15E148 Safari/604.1&quot;
+    [12]=&gt;
+    NULL
+    [13]=&gt;
+    object(stdClass)#21 (7) {
+      [&quot;attributeKey[0]&quot;]=&gt;
+      string(10) &quot;FIRST_NAME&quot;
+      [&quot;attributeValue[0]&quot;]=&gt;
+      string(5) &quot;Peter&quot;
+      [&quot;attributeKey[1]&quot;]=&gt;
+      string(9) &quot;LAST_NAME&quot;
+      [&quot;attributeValue[1]&quot;]=&gt;
+      string(12) &quot;Meisenheimer&quot;
+      [&quot;attributeKey[2]&quot;]=&gt;
+      string(6) &quot;ANREDE&quot;
+      [&quot;attributeValue[2]&quot;]=&gt;
+      string(1) &quot;0&quot;
+      [&quot;immediateConfirmation&quot;]=&gt;
+      string(32) &quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;
+    }
+  }
+}
+">request</a>
+  <a href="javascript:RenderPage(request_key_prefix)" title="string(43) &quot;Subscribe(2c9696bff869d949379dfe8c9d7ad4d7)&quot;
+">request_key_prefix</a>
+  <a href="javascript:RenderPage(response)" title="array(2) {
+  [&quot;result&quot;]=&gt;
+  NULL
+  [&quot;errors&quot;]=&gt;
+  array(0) {
+  }
+}
+">response</a>
+  <a href="javascript:RenderPage(strController)" title="string(3) &quot;api&quot;
+">strController</a>
+  <a href="javascript:RenderPage(strModuleDirectory)" title="string(11) &quot;translation&quot;
+">strModuleDirectory</a>
+  <a href="javascript:RenderPage(strUriArguments)" title="string(0) &quot;&quot;
+">strUriArguments</a>
+</pre><script type="text/javascript">   = "<pre></pre>";
+  Request = "<pre>object(stdClass)#20 (2) {\n  [&quot;Method&quot;]=&gt;\n  string(9) &quot;Subscribe&quot;\n  [&quot;Parameters&quot;]=&gt;\n  array(14) {\n    [0]=&gt;\n    string(25) &quot;Phoenix-immob@t-online.de&quot;\n    [1]=&gt;\n    array(5) {\n      [0]=&gt;\n      string(3) &quot;CWC&quot;\n      [1]=&gt;\n      string(2) &quot;WS&quot;\n      [2]=&gt;\n      string(2) &quot;BK&quot;\n      [3]=&gt;\n      string(2) &quot;DL&quot;\n      [4]=&gt;\n      string(2) &quot;OP&quot;\n    }\n    [2]=&gt;\n    string(3) &quot;114&quot;\n    [3]=&gt;\n    string(13) &quot;93.201.102.98&quot;\n    [4]=&gt;\n    string(123) &quot;https://club.computerwissen.de/index.php?option=com_users&amp;task=registration.activate&amp;token=Hmt5xEkF8Yi6qeUplbf1LGVnaRBJAzu0&quot;\n    [5]=&gt;\n    string(38) &quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;\n    [6]=&gt;\n    NULL\n    [7]=&gt;\n    NULL\n    [8]=&gt;\n    bool(false)\n    [9]=&gt;\n    bool(false)\n    [10]=&gt;\n    string(0) &quot;&quot;\n    [11]=&gt;\n    string(137) &quot;Mozilla/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.1 Mobile/15E148 Safari/604.1&quot;\n    [12]=&gt;\n    NULL\n    [13]=&gt;\n    object(stdClass)#21 (7) {\n      [&quot;attributeKey[0]&quot;]=&gt;\n      string(10) &quot;FIRST_NAME&quot;\n      [&quot;attributeValue[0]&quot;]=&gt;\n      string(5) &quot;Peter&quot;\n      [&quot;attributeKey[1]&quot;]=&gt;\n      string(9) &quot;LAST_NAME&quot;\n      [&quot;attributeValue[1]&quot;]=&gt;\n      string(12) &quot;Meisenheimer&quot;\n      [&quot;attributeKey[2]&quot;]=&gt;\n      string(6) &quot;ANREDE&quot;\n      [&quot;attributeValue[2]&quot;]=&gt;\n      string(1) &quot;0&quot;\n      [&quot;immediateConfirmation&quot;]=&gt;\n      string(32) &quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;\n    }\n  }\n}\n</pre>";
+  _COOKIE = "<pre>array(0) {\n}\n</pre>";
+  _FILES = "<pre>array(0) {\n}\n</pre>";
+  _GET = "<pre>array(0) {\n}\n</pre>";
+  _POST = "<pre>array(3) {\n  [&quot;{&quot;Method&quot;:&quot;Subscribe&quot;,&quot;Parameters&quot;:&quot;]=&gt;\n  array(1) {\n    [&quot;&quot;Phoenix-immob@t-online.de&quot;,[&quot;CWC&quot;,&quot;WS&quot;,&quot;BK&quot;,&quot;DL&quot;,&quot;OP&quot;&quot;]=&gt;\n    string(9) &quot;com_users&quot;\n  }\n  [&quot;task&quot;]=&gt;\n  string(21) &quot;registration.activate&quot;\n  [&quot;token&quot;]=&gt;\n  string(487) &quot;Hmt5xEkF8Yi6qeUplbf1LGVnaRBJAzu0&quot;,&quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;,null,null,false,false,&quot;&quot;,&quot;Mozilla\\/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit\\/605.1.15 (KHTML, like Gecko) Version\\/14.0.1 Mobile\\/15E148 Safari\\/604.1&quot;,null,{&quot;attributeKey[0]&quot;:&quot;FIRST_NAME&quot;,&quot;attributeValue[0]&quot;:&quot;Peter&quot;,&quot;attributeKey[1]&quot;:&quot;LAST_NAME&quot;,&quot;attributeValue[1]&quot;:&quot;Meisenheimer&quot;,&quot;attributeKey[2]&quot;:&quot;ANREDE&quot;,&quot;attributeValue[2]&quot;:&quot;0&quot;,&quot;immediateConfirmation&quot;:&quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;}]}&quot;\n}\n</pre>";
+  _SERVER = "<pre>array(33) {\n  [&quot;REDIRECT_HTTPS&quot;]=&gt;\n  string(2) &quot;on&quot;\n  [&quot;REDIRECT_SSL_TLS_SNI&quot;]=&gt;\n  string(21) &quot;nss-computerwissen.de&quot;\n  [&quot;REDIRECT_STATUS&quot;]=&gt;\n  string(3) &quot;200&quot;\n  [&quot;HTTPS&quot;]=&gt;\n  string(2) &quot;on&quot;\n  [&quot;SSL_TLS_SNI&quot;]=&gt;\n  string(21) &quot;nss-computerwissen.de&quot;\n  [&quot;HTTP_HOST&quot;]=&gt;\n  string(21) &quot;nss-computerwissen.de&quot;\n  [&quot;HTTP_ACCEPT&quot;]=&gt;\n  string(3) &quot;*/*&quot;\n  [&quot;CONTENT_LENGTH&quot;]=&gt;\n  string(3) &quot;696&quot;\n  [&quot;CONTENT_TYPE&quot;]=&gt;\n  string(33) &quot;application/x-www-form-urlencoded&quot;\n  [&quot;PATH&quot;]=&gt;\n  string(60) &quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;\n  [&quot;SERVER_SIGNATURE&quot;]=&gt;\n  string(83) &quot;&lt;address&gt;Apache/2.4.25 (Debian) Server at nss-computerwissen.de Port 443&lt;/address&gt;\n&quot;\n  [&quot;SERVER_SOFTWARE&quot;]=&gt;\n  string(22) &quot;Apache/2.4.25 (Debian)&quot;\n  [&quot;SERVER_NAME&quot;]=&gt;\n  string(21) &quot;nss-computerwissen.de&quot;\n  [&quot;SERVER_ADDR&quot;]=&gt;\n  string(14) &quot;141.101.36.215&quot;\n  [&quot;SERVER_PORT&quot;]=&gt;\n  string(3) &quot;443&quot;\n  [&quot;REMOTE_ADDR&quot;]=&gt;\n  string(14) &quot;134.119.43.130&quot;\n  [&quot;DOCUMENT_ROOT&quot;]=&gt;\n  string(23) &quot;/var/www/vhosts/nss/web&quot;\n  [&quot;REQUEST_SCHEME&quot;]=&gt;\n  string(5) &quot;https&quot;\n  [&quot;CONTEXT_PREFIX&quot;]=&gt;\n  string(0) &quot;&quot;\n  [&quot;CONTEXT_DOCUMENT_ROOT&quot;]=&gt;\n  string(23) &quot;/var/www/vhosts/nss/web&quot;\n  [&quot;SERVER_ADMIN&quot;]=&gt;\n  string(27) &quot;dennis.grote@muahsystems.de&quot;\n  [&quot;SCRIPT_FILENAME&quot;]=&gt;\n  string(33) &quot;/var/www/vhosts/nss/web/index.php&quot;\n  [&quot;REMOTE_PORT&quot;]=&gt;\n  string(5) &quot;58344&quot;\n  [&quot;REDIRECT_URL&quot;]=&gt;\n  string(4) &quot;/api&quot;\n  [&quot;GATEWAY_INTERFACE&quot;]=&gt;\n  string(7) &quot;CGI/1.1&quot;\n  [&quot;SERVER_PROTOCOL&quot;]=&gt;\n  string(8) &quot;HTTP/1.1&quot;\n  [&quot;REQUEST_METHOD&quot;]=&gt;\n  string(4) &quot;POST&quot;\n  [&quot;QUERY_STRING&quot;]=&gt;\n  string(0) &quot;&quot;\n  [&quot;REQUEST_URI&quot;]=&gt;\n  string(4) &quot;/api&quot;\n  [&quot;SCRIPT_NAME&quot;]=&gt;\n  string(10) &quot;/index.php&quot;\n  [&quot;PHP_SELF&quot;]=&gt;\n  string(10) &quot;/index.php&quot;\n  [&quot;REQUEST_TIME_FLOAT&quot;]=&gt;\n  float(1607611190,259)\n  [&quot;REQUEST_TIME&quot;]=&gt;\n  int(1607611190)\n}\n</pre>";
+  api_session_id = "<pre>bool(false)\n</pre>";
+  cache_enabled = "<pre>bool(true)\n</pre>";
+  cached_response = "<pre>bool(false)\n</pre>";
+  doc_comment = "<pre>string(491) &quot;/**\n * @param string $EmailAddress\n * @param string[]|string $NewsletterAbbreviations\n * @param string $OptInProcessId\n * @param string $CustomerRemoteAddress\n * @param string $CallingService\n * @param string|null $Affiliate\n * @param string|null $VisitorId\n * @param string|null $SessionId\n * @param bool $TraderFox\n * @param bool $Bullvestor\n * @param string $Coreg\n * @param string $strUserAgent\n * @param string $strAdref\n * @param \\stdClass $stdAdditionalProperties\n * @return array\n */&quot;\n</pre>";
+  function_name = "<pre>string(13) &quot;api\\subscribe&quot;\n</pre>";
+  language = "<pre>string(5) &quot;de_DE&quot;\n</pre>";
+  matches = "<pre>array(0) {\n}\n</pre>";
+  output = "<pre>string(4) &quot;json&quot;\n</pre>";
+  raw_request = "<pre>string(696) &quot;{&quot;Method&quot;:&quot;Subscribe&quot;,&quot;Parameters&quot;:[&quot;Phoenix-immob@t-online.de&quot;,[&quot;CWC&quot;,&quot;WS&quot;,&quot;BK&quot;,&quot;DL&quot;,&quot;OP&quot;],&quot;114&quot;,&quot;93.201.102.98&quot;,&quot;https:\\/\\/club.computerwissen.de\\/index.php?option=com_users&amp;task=registration.activate&amp;token=Hmt5xEkF8Yi6qeUplbf1LGVnaRBJAzu0&quot;,&quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;,null,null,false,false,&quot;&quot;,&quot;Mozilla\\/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit\\/605.1.15 (KHTML, like Gecko) Version\\/14.0.1 Mobile\\/15E148 Safari\\/604.1&quot;,null,{&quot;attributeKey[0]&quot;:&quot;FIRST_NAME&quot;,&quot;attributeValue[0]&quot;:&quot;Peter&quot;,&quot;attributeKey[1]&quot;:&quot;LAST_NAME&quot;,&quot;attributeValue[1]&quot;:&quot;Meisenheimer&quot;,&quot;attributeKey[2]&quot;:&quot;ANREDE&quot;,&quot;attributeValue[2]&quot;:&quot;0&quot;,&quot;immediateConfirmation&quot;:&quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;}]}&quot;\n</pre>";
+  redis = "<pre>object(Naytec\\Redis)#23 (1) {\n  [&quot;socket&quot;]=&gt;\n  resource(12) of type (Redis Socket Buffer)\n}\n</pre>";
+  reflection_function = "<pre>object(ReflectionFunction)#19 (1) {\n  [&quot;name&quot;]=&gt;\n  string(13) &quot;api\\subscribe&quot;\n}\n</pre>";
+  request = "<pre>object(stdClass)#20 (2) {\n  [&quot;Method&quot;]=&gt;\n  string(9) &quot;Subscribe&quot;\n  [&quot;Parameters&quot;]=&gt;\n  array(14) {\n    [0]=&gt;\n    string(25) &quot;Phoenix-immob@t-online.de&quot;\n    [1]=&gt;\n    array(5) {\n      [0]=&gt;\n      string(3) &quot;CWC&quot;\n      [1]=&gt;\n      string(2) &quot;WS&quot;\n      [2]=&gt;\n      string(2) &quot;BK&quot;\n      [3]=&gt;\n      string(2) &quot;DL&quot;\n      [4]=&gt;\n      string(2) &quot;OP&quot;\n    }\n    [2]=&gt;\n    string(3) &quot;114&quot;\n    [3]=&gt;\n    string(13) &quot;93.201.102.98&quot;\n    [4]=&gt;\n    string(123) &quot;https://club.computerwissen.de/index.php?option=com_users&amp;task=registration.activate&amp;token=Hmt5xEkF8Yi6qeUplbf1LGVnaRBJAzu0&quot;\n    [5]=&gt;\n    string(38) &quot;SEO_CW_CWC_WEB_OA_computerwissen-club&quot;\n    [6]=&gt;\n    NULL\n    [7]=&gt;\n    NULL\n    [8]=&gt;\n    bool(false)\n    [9]=&gt;\n    bool(false)\n    [10]=&gt;\n    string(0) &quot;&quot;\n    [11]=&gt;\n    string(137) &quot;Mozilla/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.1 Mobile/15E148 Safari/604.1&quot;\n    [12]=&gt;\n    NULL\n    [13]=&gt;\n    object(stdClass)#21 (7) {\n      [&quot;attributeKey[0]&quot;]=&gt;\n      string(10) &quot;FIRST_NAME&quot;\n      [&quot;attributeValue[0]&quot;]=&gt;\n      string(5) &quot;Peter&quot;\n      [&quot;attributeKey[1]&quot;]=&gt;\n      string(9) &quot;LAST_NAME&quot;\n      [&quot;attributeValue[1]&quot;]=&gt;\n      string(12) &quot;Meisenheimer&quot;\n      [&quot;attributeKey[2]&quot;]=&gt;\n      string(6) &quot;ANREDE&quot;\n      [&quot;attributeValue[2]&quot;]=&gt;\n      string(1) &quot;0&quot;\n      [&quot;immediateConfirmation&quot;]=&gt;\n      string(32) &quot;PCemupZnsudHNWDeHd3CU2TbPVQWHpF3&quot;\n    }\n  }\n}\n</pre>";
+  request_key_prefix = "<pre>string(43) &quot;Subscribe(2c9696bff869d949379dfe8c9d7ad4d7)&quot;\n</pre>";
+  response = "<pre>array(2) {\n  [&quot;result&quot;]=&gt;\n  NULL\n  [&quot;errors&quot;]=&gt;\n  array(0) {\n  }\n}\n</pre>";
+  strController = "<pre>string(3) &quot;api&quot;\n</pre>";
+  strModuleDirectory = "<pre>string(11) &quot;translation&quot;\n</pre>";
+  strUriArguments = "<pre>string(0) &quot;&quot;\n</pre>";
+</script>			</div><br />
+			<hr width="100%" size="1" color="#dddddd" />
+			<center><em>
+				Exception Report Generated:&nbsp;&nbsp;Thursday, December 10 2020, 3:39:50.86253200 PM CET				<br/>
+				Exception Report NOT Logged
+			</em></center>
+	</div>
+	</body>
+</html>
+
+
+================
