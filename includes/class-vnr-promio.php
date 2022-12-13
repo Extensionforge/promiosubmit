@@ -42,12 +42,14 @@ function custom_get_logged_in_cookie_vnrpromio($logged_in_cookie, $expire, $expi
 		$anredex     = "H";
 		$vorname     = "unbekannt";
 		$nachname     = "unbekannt";
-		if(isset(xprofile_get_field_data( "Interessen", $user_id, 'comma' ))){
+		
+		if(null !== xprofile_get_field_data( "Interessen", $user_id, 'comma' )){
 			$interessenx = xprofile_get_field_data( "Interessen", $user_id, 'comma' );	
 		}
-		if(isset(xprofile_get_field_data( "Anrede", $user_id, '' ))){$anredex     = xprofile_get_field_data( "Anrede", $user_id, '' );}
-		if(isset(xprofile_get_field_data( "Vorname", $user_id, '' ))){$vorname     = xprofile_get_field_data( "Vorname", $user_id, '' );}
-		if(isset(xprofile_get_field_data( "Nachname", $user_id, '' ))){$nachname     = xprofile_get_field_data( "Nachname", $user_id, '' );}
+		if(null !== xprofile_get_field_data( "Anrede", $user_id, '' )){$anredex     = xprofile_get_field_data( "Anrede", $user_id, '' );}
+		if(null !== xprofile_get_field_data( "Vorname", $user_id, '' )){$vorname     = xprofile_get_field_data( "Vorname", $user_id, '' );}
+		if(null !== xprofile_get_field_data( "Nachname", $user_id, '' )){$nachname     = xprofile_get_field_data( "Nachname", $user_id, '' );}
+		
 		
 		
 		$triggered = false;
