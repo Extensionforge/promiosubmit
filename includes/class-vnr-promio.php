@@ -34,15 +34,22 @@ add_action('set_logged_in_cookie', 'custom_get_logged_in_cookie_vnrpromio', 10, 
 function custom_get_logged_in_cookie_vnrpromio($logged_in_cookie, $expire, $expiration, $user_id, $logged_in_text, $token)
 {
 		global $wpdb;
-	    $user = get_user_by('id', $user_id);
+	    $current_user = wp_get_current_user();
+    	$emailuser = $current_user->user_email;
 
 		NssApi::set_api_endpoint(NssApi::API_ENDPOINT_COMPUTERWISSEN);
+
+		$anredex     = "H";
+		$vorname     = "unbekannt";
+		$nachname     = "unbekannt";
+		if(isset(xprofile_get_field_data( "Interessen", $user_id, 'comma' ))){
+			$interessenx = xprofile_get_field_data( "Interessen", $user_id, 'comma' );	
+		}
+		if(isset(xprofile_get_field_data( "Anrede", $user_id, '' ))){$anredex     = xprofile_get_field_data( "Anrede", $user_id, '' );}
+		if(isset(xprofile_get_field_data( "Vorname", $user_id, '' ))){$vorname     = xprofile_get_field_data( "Vorname", $user_id, '' );}
+		if(isset(xprofile_get_field_data( "Nachname", $user_id, '' ))){$nachname     = xprofile_get_field_data( "Nachname", $user_id, '' );}
 		
-		$interessen = xprofile_get_field_data( "Interessen", $user_id, 'comma' );
-		$anredex     = xprofile_get_field_data( "Anrede", $user_id, '' );
-		$vorname     = xprofile_get_field_data( "Vorname", $user_id, '' );
-		$nachname     = xprofile_get_field_data( "Nachname", $user_id, '' );
-		$emailuser     = $user->user_email;
+		
 		$triggered = false;
 		$triggered = get_user_meta($user_id,"promio_nl_send");
 
@@ -52,10 +59,12 @@ function custom_get_logged_in_cookie_vnrpromio($logged_in_cookie, $expire, $expi
 		//var_dump($interessen);
 		//echo $anrede." ".$vorname." ".$nachname." ".$email;
 		//var_dump($interessen);
+		$interessen = "CWC, ".$interessenx;
 		if($interessen){
-		$interessen = "CWC, ".$interessen;
-
+		
 		$abos = array_map('trim', explode(",",$interessen));
+
+		//disable with true delete to activate
 		$triggered=true;
 		if($triggered==false){
 			// do submit
@@ -80,8 +89,8 @@ function custom_get_logged_in_cookie_vnrpromio($logged_in_cookie, $expire, $expi
 				]))
 					);
 				} catch (Exception $exception) {
-					//echo 'Fehler: API!<br />';
-					//print($exception->getMessage());
+					echo 'Fehler: API!<br />';
+					print($exception->getMessage());
 				}          
 
 		}
