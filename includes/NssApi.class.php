@@ -12,11 +12,11 @@ class NssApi {
 	 */
 	private static $api_endpoint;
 
-	const API_ENDPOINT_GEVESTOR = NSS_API_ENDPOINT_GEVESTOR;
-	const API_ENDPOINT_FID = NSS_API_ENDPOINT_FID;
-	const API_ENDPOINT_COMPUTERWISSEN = NSS_API_ENDPOINT_COMPUTERWISSEN;
-	const API_ENDPOINT_B2B = NSS_API_ENDPOINT_B2B;
-	const API_PASSWORD = API_PASSWORD;
+	const API_ENDPOINT_GEVESTOR = getenv('NSS_API_ENDPOINT_GEVESTOR');
+	const API_ENDPOINT_FID = getenv('NSS_API_ENDPOINT_FID');
+	const API_ENDPOINT_COMPUTERWISSEN = getenv('NSS_API_ENDPOINT_COMPUTERWISSEN');
+	const API_ENDPOINT_B2B = getenv('NSS_API_ENDPOINT_B2B');
+	const API_PASSWORD = getenv('API_PASSWORD');
 
 	/**
 	 * @var stdClass[] Used to cache calls to get_opt_in_email_information()
