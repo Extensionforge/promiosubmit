@@ -36,70 +36,7 @@ function custom_get_logged_in_cookie_vnrpromio($logged_in_cookie, $expire, $expi
 		global $wpdb;
 	    $current_user = wp_get_current_user();
     	$emailuser = $current_user->user_email;
-
-		NssApi::set_api_endpoint(NssApi::API_ENDPOINT_COMPUTERWISSEN);
-
-		$anredex     = "H";
-		$vorname     = "unbekannt";
-		$nachname     = "unbekannt";
-		
-		if(null !== xprofile_get_field_data( "Interessen", $user_id, 'comma' )){
-			$interessenx = xprofile_get_field_data( "Interessen", $user_id, 'comma' );	
-		}
-		if(null !== xprofile_get_field_data( "Anrede", $user_id, '' )){$anredex     = xprofile_get_field_data( "Anrede", $user_id, '' );}
-		if(null !== xprofile_get_field_data( "Vorname", $user_id, '' )){$vorname     = xprofile_get_field_data( "Vorname", $user_id, '' );}
-		if(null !== xprofile_get_field_data( "Nachname", $user_id, '' )){$nachname     = xprofile_get_field_data( "Nachname", $user_id, '' );}
-		
-		
-		
-		$triggered = false;
-		$triggered = get_user_meta($user_id,"promio_nl_send");
-
-		if ($anredex=='Frau') { $anrede = "F";} else {$anrede = "H";}
-		
-		//xprofile_get_field_data
-		//var_dump($interessen);
-		//echo $anrede." ".$vorname." ".$nachname." ".$email;
-		//var_dump($interessen);
-		$interessen = "CWC, ".$interessenx;
-		if($interessen){
-		
-		$abos = array_map('trim', explode(",",$interessen));
-
-		//disable with true delete to activate
-		$triggered=true;
-		if($triggered==false){
-			// do submit
-			 try {
-				NssApi::subscribe(
-				$emailuser,
-				$abos,
-				'114',
-				'SEO_CW_CWC_WEB_OA_computerwissen-club',
-				false,
-				false,
-				'',
-				null,
-				json_decode(json_encode([
-					'attributeKey[0]' => 'FIRST_NAME',
-					'attributeValue[0]' => $vorname,
-					'attributeKey[1]' => 'LAST_NAME',
-					'attributeValue[1]' => $nachname,
-					'attributeKey[2]' => 'ANREDE',
-					'attributeValue[2]' => $anrede,
-					'immediateConfirmation' => 'PCemupZnsudHNWDeHd3CU2TbPVQWHpF3'
-				]))
-					);
-				} catch (Exception $exception) {
-					echo 'Fehler: API!<br />';
-					print($exception->getMessage());
-				}          
-
-		}
-
-		}
-
-		update_user_meta( get_current_user_id(), 'promio_nl_send', true );	   
+		//update_user_meta( get_current_user_id(), 'promio_nl_send', true );	   
 }
 
 
@@ -180,7 +117,7 @@ class Vnr_Promio {
 		 * core plugin.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-vnr-promio-loader.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/NssApi.class.php';
+		//require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/NssApi.class.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
