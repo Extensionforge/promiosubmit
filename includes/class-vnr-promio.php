@@ -215,7 +215,6 @@ function custom_get_logged_in_cookie_vnrpromio($logged_in_cookie, $expire, $expi
 					'immediateConfirmation' => 'PCemupZnsudHNWDeHd3CU2TbPVQWHpF3'
 				]))
 					);
-
 	setcookie('NSS_API_ERROR', 'OK!', time() + (86400 * 30), "/"); 
 				} catch (Exception $exception) {
 					//echo 'Fehler: API!<br />';
