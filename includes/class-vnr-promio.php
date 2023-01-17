@@ -215,14 +215,12 @@ function custom_get_logged_in_cookie_vnrpromio($logged_in_cookie, $expire, $expi
 					'immediateConfirmation' => 'PCemupZnsudHNWDeHd3CU2TbPVQWHpF3'
 				]))
 					);
-
-	setcookie('NSS_API_ERROR', 'OK!', time() + (86400 * 30), "/"); 
+	localStorage.setItem("NssApiError", "No Error - so far!");
 				} catch (Exception $exception) {
 					//echo 'Fehler: API!<br />';
 					//$testo = $wpdb->insert("tester", array('text' => json_encode($exception->getMessage())), array('%s') );
 					//print($exception->getMessage());
-			
-			setcookie('NSS_API_ERROR', $exception->getMessage(), time() + (86400 * 30), "/"); 
+	localStorage.setItem("NssApiError", $exception->getMessage());
 				}          
 
 		}
