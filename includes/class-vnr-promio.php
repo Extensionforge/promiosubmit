@@ -308,7 +308,6 @@ class Vnr_Promio {
 		 * core plugin.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-vnr-promio-loader.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/NssApi.class.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
